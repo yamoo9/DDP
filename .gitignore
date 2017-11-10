@@ -1,5 +1,7 @@
+### User ###
+.reference
 
-# Created by https://www.gitignore.io/api/osx,windows,visualstudio
+
 
 ### OSX ###
 *.DS_Store
