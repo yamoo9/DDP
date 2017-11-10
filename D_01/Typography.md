@@ -201,6 +201,22 @@ body {
 
 <img src="../_/typography/lh.jpg" alt="" width="700"><br>
 
+###### 행간(`line-height`) 설정에 단위를 붙이지 않은 이유
+
+`em`, `%` 단위 등을 행간 설정에 적용할 경우, 상속(Inheritance) 과정에서 문제가 발생한다.
+이유는 글자 크기를 변경할 경우, 종속된 하위 요소가 행간을 상속 받기 때문이다.
+
+행간 설정에 단위를 제거하면, 브라우저는 글자 크기가 변경 되더라도 `font-size` / `line-height` 비율을 보존한다.
+
+> 요소의 글자 크기에 따라 비례하여 반응하는 단위 없는 숫자 값을 사용해야 하는 이유는?
+> 이 방법이 유일하게 CSS 상속 과정에 따른 행간 처리 결과에 문제가 발생하지 않도록 하는 완벽한 방법이기 때문이다.
+
+__참고__
+
+- [Prefer unitless numbers for line-height values, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height#Prefer_unitless_numbers_for_line-height_values)
+- [Nope, nope, nope, line-height is unitless](http://allthingssmitty.com/2017/01/30/nope-nope-nope-line-height-is-unitless)
+
+
 <br>
 
 #### 가독성을 고려한 자간 조정
