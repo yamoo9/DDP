@@ -268,7 +268,7 @@ $ npm run serve
 
 <br>
 
-<img src="../_/Typography/anatomy.jpg" alt="타이포그래피 디자인">
+<img src="../_/typography/anatomy.jpg" alt="타이포그래피 디자인">
 
 <br>
 <br>
@@ -277,7 +277,7 @@ __실습 콘텐츠__
 
 아래 실습 콘텐츠를 활용하여 타이그래피 디자인을 진행합니다.
 
-[<img src="../_/Typography/sketch-view.png" alt="Sketch View">](https://brunch.co.kr/@12m17d/46)
+[<img src="../_/typography/sketch-view.png" alt="Sketch View">](https://brunch.co.kr/@12m17d/46)
 
 실습용 텍스트 콘텐츠
 
