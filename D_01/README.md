@@ -255,7 +255,11 @@ $ npm run serve
 
 <br>
 
+—
+
 ### [타이포그래피](./Typography.md)
+
+일반적으로 타이포그래피 디자인은 사용자가 읽거나 듣는 콘텐츠를 설계(Design)하는 것을 말합니다.
 
 - 본문/단락(Paragraph)
 - 제목(Headings)
@@ -271,7 +275,11 @@ $ npm run serve
 
 __실습 콘텐츠__
 
+아래 실습 콘텐츠를 활용하여 타이그래피 디자인을 진행합니다.
+
 [<img src="../_/Typography/sketch-view.png" alt="Sketch View">](https://brunch.co.kr/@12m17d/46)
+
+실습용 텍스트 콘텐츠
 
 ---
 
@@ -303,9 +311,29 @@ __실습 콘텐츠__
 
 __UI 디자인의 핵심__ ⇔ __타이포그래피 디자인__<i>!</i>
 
+타이포그래피는 기능성을 가질 때 UI가 됩니다.
+
 <img src="../_/Typography/typography-en.jpg" alt="">
 
 <br>
+<br>
+
+
+—
+
+### [그리드 시스템](./GridSystem.md)
+
+"정보에 질서를 부여하는 것"이 그리드 시스템을 사용하는 이유입니다.
+
+그리드 시스템은 디자이너의 창의성을 저해하지 않습니다. 질서를 쉽고 강력하게 제작하도록 도와주는 디자인 도구입니다.
+
+시스템(체계)을 토대로 기원 원칙 위에 다양한 응용을 반영하여 디자인(설계) 할 수 있습니다.
+
+<img src="../_/grid-system/compare.jpg" alt="">
+
+#### 그리드 시스템을 기반으로 기본에 충실하면서 다양한 응용을 보여주는 디자인 예시
+
+<img src="https://raw.githubusercontent.com/yamoo9/PSD2HTML-CSS/master/__assets__/psd-grid-system.png" alt="">
 
 ---
 
