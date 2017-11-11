@@ -1,0 +1,2443 @@
+/* =======================================*/
+/* 메인 > 로그인 > 외부로그인
+/* (html/login.html)
+/* =======================================*/
+.login-bg {
+    position: relative;
+    background: #fafafa;
+    .login-area {
+        @include wh-center ($position: absolute);
+        width: 740px;
+        h2 {
+            @extend %content-title;
+            font-size: 50px;
+            margin-bottom: 40px;
+        }
+    }
+}
+.login-content {
+    @include content-box(356px);
+    .form-group {
+        @include w-center ($position: absolute);
+        top: 50px;
+        width: 406px;
+        @extend %clearfix;
+        .input-area {
+            float: left;
+            width: 316px;
+            @include input-type ($w: 220px, $h: 34px, $p: 0 10px, $bdc: #e6e9eb);
+            label {
+                float: left;
+                font-weight: bold;
+                letter-spacing: -0.04em;
+                color: #002644;
+            }
+            input {
+                float: right;
+                margin-bottom: 8px;
+            }
+        }
+        .btn-login {
+            float: right;
+            letter-spacing: -0.01em;
+            background: #003761;
+            border-bottom: 3px solid #002644;
+            @include btn-size ($dp: inline-block, $w: 76px, $h: 76px);
+            @include btn-type-2 ($color: #fff, $bdb: #002644, $bg: #003761);
+        }
+    }
+}
+.login-content {
+    .checkbox-type {
+        @include w-center ($position: absolute);
+        top: 147px;
+        width: 220px;
+        label {
+            letter-spacing: -0.04em;
+        }
+    }
+}
+.login-content {
+    .btn-link-set {
+        text-align: center;
+        margin-top: 190px;
+        .btn-main {
+            @extend %btn-type-2-02;
+        }
+        .btn-join {
+            @extend %btn-type-2-03;
+        }
+    }
+}
+.login-content {
+    .information {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: #4c4c4c;
+        text-align: center;
+        height: 75px;
+        line-height: 75px;
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+        border-top: 1px solid #afc0cc;
+        background: #e5f4ff;
+        span {
+            color: #0c314c;
+        }
+    }
+}
+
+/* =======================================*/
+/* 커뮤니티 > 뉴스레터
+/* (html/news-letters.html)
+/* =======================================*/
+.news-letters {
+    padding: 13px 67px 57px 67px !important;
+    margin: 0 10px;
+    background: #f5f8fa;
+    .gallery {
+        @include gallery(3, 44px);
+        li {
+            position: relative;
+            height: 330px;
+            margin-top: 44px;
+            background: url($news-letters-bg) no-repeat;
+            .vol-area {
+                position: absolute;
+                top: 3px;
+                left: 3px;
+                right: 3px;
+                z-index: 10;
+                height: 60px;
+                color: #fff;
+                background: url($news-letters-title-bg) no-repeat;
+                .vol {
+                    float: left;
+                    min-width: 36px;
+                    height: 36px;
+                    margin-top: 12px;
+                    background: #62b5f5;
+                    span {
+                        display: block;
+                        text-align: center;
+                        font-size: 16px;
+                        line-height: 1.15;
+                        &:first-child {
+                            font-size: 8px;
+                            padding-top: 4px;
+                        }
+                    }
+                }
+                .vol-title {
+                    float: left;
+                    margin-top: 12px;
+                    span {
+                        display: block;
+                        font-size: 24px;
+                        line-height: 1.15;
+                        padding-left: 8px;
+                        &:first-child {
+                            font-size: 11px;
+                        }
+                        &:last-child {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+            a {
+                figure {
+                    div {
+                        position: absolute;
+                        top: 3px;
+                        left:  3px;
+                        right:  3px;
+                        height: 270px;
+                        border-top-left-radius: 3px;
+                        border-top-right-radius: 3px;
+                        z-index: 9;
+                        img {
+                            overflow: hidden;
+                        }
+                    }
+                    figcaption {
+                        position: absolute;
+                        bottom: 7px;
+                        left:  3px;
+                        right:  3px;
+                        height: 50px;
+                        line-height: 50px;
+                        padding: 0 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 커뮤니티 > FAQ 조회
+/* (html/faq-list.html)
+/* =======================================*/
+.accordion-faq {
+    > li {
+        border-bottom: 1px solid #d2d4d6;
+        &:first-child {
+            border-top: 1px solid #d2d4d6;
+        }
+        [class*="link"] {
+            position: relative;
+            height: 60px;
+            line-height: 60px;
+            padding: 0 30px;
+            [class^="title-"] {
+                float: left;
+                font-size: 16px;
+                color: #333;
+                vertical-align: top;
+            }
+            .title-type {
+                font-weight: bold;
+                width: 200px;
+                &:before {
+                    display: inline-block;
+                    content: "Q.";
+                    padding-right: 14px;
+                }
+            }
+            .title-name {
+                width: -webkit-calc( 100% - 240px );
+                width: -moz-calc( 100% - 240px );
+                width: calc( 100% - 240px );
+                height: inherit;
+                @include ellipsis(1);
+            }
+            &:before {
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                width: 17px;
+                height: 1px;
+                background: #333;
+                content: "";
+            }
+            &:after {
+                position: absolute;
+                top: 22px;
+                right: 38px;
+                width: 1px;
+                height: 17px;
+                background: #333;
+                content: "";
+                transform: rotate(-90deg);
+            }
+        }
+        &.open {
+            border-bottom: 0;
+            &:first-child {
+                border-top: 2px solid #45494d;
+            }
+            [class*="link"] {
+                background: #faf6f5;
+                border-bottom: 1px solid #d2d4d6;
+                [class^="title-"] {
+                    color: #003761;
+                }
+                &:after {
+                    transform: rotate(0deg);
+                    transition: transform 0.25s ease;
+                }
+            }
+            [class*="sub"] {
+                border-bottom: 1px solid #45494d;
+            }
+        }
+    }
+    [class*="sub"] {
+        position: relative;
+        padding: 16px 30px 16px 60px;
+        &:before {
+            position: absolute;
+            left: 30px;
+            display: inline-block;
+            content: "A.";
+            font-weight: bold;
+        }
+        p {
+            line-height: 1.6;
+        }
+    }
+}
+
+/* =======================================*/
+/* 커뮤니티 > Q&A조회
+/* (html/qna-list.html)
+/* =======================================*/
+.qna-content {
+    tbody {
+        td {
+            &:nth-child(2) {
+                text-align: left;
+            }
+        }
+    }
+    .table-btn-set {
+        .btn-popup-qna-write {
+            @extend %btn-type-3-02;
+        }
+    }
+}
+
+/* =======================================*/
+/* 커뮤니티 > Q&A 상세 조회 팝업
+/* (html/qna-list.html)
+/* =======================================*/
+.popup-qna-list {
+    .qna-comments {
+        margin-top: 10px;
+    }
+}
+
+/* =======================================*/
+/* 커뮤니티 > Q&A 상세 입력 팝업
+/* (html/qna-list.html)
+/* =======================================*/
+.popup-qna-write {
+     table {
+        tbody {
+            td {
+                .secret-article {
+                    margin-top: 7px;
+                    margin-bottom: 3px;
+                    label {
+                        span {
+                            color: #757575;
+                        }
+                    }
+                }
+                &.security-text-area {
+                    * {
+                        float: left;
+                    }
+                    .input-type {
+                        @include input-type ($w: 140px);
+                    }
+                    .security-text {
+                        width: 154px;
+                        height: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                        margin: 0 6px;
+                        background: #d5d5d5;
+                    }
+                    strong {
+                        color: #333;
+                        line-height: 30px;
+                    }
+                }
+                .add-file-area {
+                    padding-left: 73px;
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 자료마당 > 공지사항
+/* (html/notices.html)
+/* =======================================*/
+.notices-content {
+    td {
+        &:nth-child(2) {
+            text-align: left;
+        }
+    }
+}
+
+/* =======================================*/
+/* 자료마당 > 공지사항 > 공지사항 상세 팝업완료
+/* (html/notices.html)
+/* =======================================*/
+.popup-notices {
+    .table-dt-dd {
+        margin-top: 0;
+        border-top: 1px solid #f0f3f5;
+        dd {
+            min-height: 210px;
+        }
+    }
+}
+
+/* =======================================*/
+/* 자료마당 > 자료실
+/* (html/resources.html)
+/* =======================================*/
+.resources-content {
+    td {
+        &:nth-child(3) {
+            text-align: left;
+        }
+    }
+}
+.resources-content {
+    .search-area {
+        li {
+            &:nth-of-type(2) {
+                @include select-box ($w: 130px);
+            }
+            &:nth-of-type(3) {
+                @include select-box ($w: 90px);
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 자료마당 > 자료마당 > 팝업
+/* (html/resources.html)
+/* =======================================*/
+.popup-resources {
+    @extend .popup-notices;
+}
+
+/* =======================================*/
+/* 자료마당 > 관련사이트
+/* (html/relation-site.html)
+/* =======================================*/
+.relation-site {
+    .panel-group {
+        [role="tabpanel"] {
+            .gallery {
+                li {
+                    margin-top: 20px;
+                    h6 {
+                        position: relative;
+                        font-size: 14px;
+                        font-weight: bold;
+                        padding-left: 10px;
+                        margin-bottom: 4px;
+                        color: #333;
+                        &:before {
+                            position: absolute;
+                            top: 8px;
+                            left: 0;
+                            display: block;
+                            width: 3px;
+                            height: 3px;
+                            background: #333;
+                            content: "";
+                        }
+                    }
+                    a {
+                        display: block;
+                        figure {
+                            text-align: center;
+                            border: 1px solid #e6e6e6;
+                            div {
+                                height: 100px;
+                                line-height: 100px;
+                                img {
+                                    vertical-align: middle;
+                                }
+                            }
+                            figcaption {
+                                margin-bottom: -1px;
+                                background: #e6e6e6;
+                                line-height: 34px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 회원서비스 > 법인.단체 > 사업자신청 완료
+/* (html/completion-of-business-application.html)
+/* =======================================*/
+.completion-of-business-application {
+    .list-form {
+        @include content-box(317px);
+        margin-bottom: 90px;
+        h3 {
+            @extend %content-title;
+            margin-top: 50px;
+        }
+        .form-group {
+            @include w-center ($position: absolute, $w-percent: 50%);
+            top: 120px;
+            width: 406px;
+            .input-area {
+                @include input-type ($w: 316px, $h: 34px, $p: 0 10px, $bdc: #e6e9eb);
+                input {
+                    float: right;
+                    margin-bottom: 8px;
+                }
+                label {
+                    float: left;
+                    font-weight: bold;
+                    letter-spacing: -0.04em;
+                    color: #002644;
+                }
+            }
+        }
+        .btn-link-set {
+            text-align: center;
+            margin-top: 130px;
+            .btn-edit-information {
+                @extend %btn-type-2-02;
+            }
+            .btn-view-status {
+                @extend %btn-type-2-03;
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 회원서비스 > 법인.단체 > 지원접수현황 조회
+/* (html/support-application-status.html)
+/* =======================================*/
+.support-application-status {
+    .content-box-area {
+        .table-type-02 {
+            th {
+                text-align: center;
+            }
+        }
+        .tracking-progress {
+            padding: 30px 20px;
+            background: #faf6f5;
+            h4 {
+                position: relative;
+                font-size: 14px;
+                font-weight: normal;
+                letter-spacing: -0.04em;
+                padding-left: 12px;
+                margin-top: 20px;
+                margin-bottom: 10px;
+                &:before {
+                    position: absolute;
+                    top: 6px;
+                    left: 0;
+                    width: 6px;
+                    height: 10px;
+                    display: inline-block;
+                    background: url($icon-progress-title) no-repeat;
+                    content: "";
+                }
+                &:first-child {
+                    margin-top: -4px;
+                }
+            }
+            ul {
+                display: table;
+                width: 100%;
+                height: 142px;
+                border: 1px solid #b3b3b3;
+                border-radius: 7px;
+                background: #fff;
+                @extend %clearfix;
+                &[class*="bar-step"] {
+                    &:before {
+                        width: 716px;
+                    }
+                }
+                li {
+                    display: table-cell;
+                    width: percent(5);
+                    text-align: center;
+                    letter-spacing: -0.04em;
+                    padding-top: 56px;
+                    border-right: 1px dashed #e1e4e6;
+                    &:last-child {
+                        border-right: 0;
+                    }
+                    .now-step {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 회원서비스 > 회원가입안내 > 약관동의 조회
+/* (html/accept-terms.html)
+/* =======================================*/
+.accept-terms {
+    .table-li {
+        margin-top: 50px;
+        .title {
+            width: 200px;
+        }
+        .input-type {
+            @include input-type ($w: 250px);
+        }
+        .btn-type-1-02 {
+            width: 126px;
+            margin-left: 2px;
+        }
+    }
+    .content-box-area {
+        .text-area {
+            height: 140px;
+            border: solid 1px #d2d4d6;
+            padding: 10px;
+            overflow-y: scroll;
+            font-size: 13px;
+            color: #666;
+            h5 {
+                font-size: 13px;
+            }
+            span {
+                font-weight: bold;
+            }
+            p {
+                padding-bottom: 22px;
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+            ul {
+                li {
+                    h6 {
+                        font-size: 13px;
+                        margin: 13px 0;
+                    }
+                }
+            }
+            ol {
+                margin: 10px 0;
+                li {
+                    list-style: decimal;
+                    list-style-position: inside;
+                }
+            }
+        }
+        .checkbox-type {
+            margin-top: 7px;
+        }
+    }
+}
+
+/* =======================================*/
+/* 회원서비스 > 회원가입안내 > 가입신청 조회
+/* html/sign-up-list.html
+/* =======================================*/
+.sign-up-list {
+    .content-box-area {
+        &:nth-child(1) {
+            .table-li {
+                li {
+                    &.title {
+                        width: 200px;
+                    }
+                    &:nth-child(2), &:nth-child(4) {
+                        width: 264px;
+                    }
+                    .input-type {
+                        input {
+                            width: 144px;
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-child(2) {
+            .table-type-02 {
+                tbody {
+                    td {
+                        .radio-type {
+                            label {
+                                margin-right: 40px;
+                            }
+                        }
+                        .select-box {
+                            width: 157px;
+                        }
+                        h4 {
+                            font-size: 14px;
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 회원서비스 > 법인.단체 > 사업자신청 Step 1. 가입여부 확인 조회
+/* (html/applicant-application-step1.html)
+/* =======================================*/
+.applicant-application-step1 {
+    @extend .accept-terms;
+}
+
+/* =======================================*/
+/* 회원서비스 > 법인.단체 > 사업자신청 Step 4. 연혁정보 조회
+/* (html/applicant-application-step4.html)
+/* =======================================*/
+.applicant-application-step4 {
+    .table-type-01 {
+        tbody {
+            tr {
+                td {
+                    &:nth-child(4) {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.applicant-application-step5 {
+    .content-box-area {
+        .table-li {
+            li {
+                &.title {
+                    width: 200px;
+                }
+                &:last-child {
+                    padding: 0;
+                }
+            }
+            .table-dt-dd {
+                border: 0;
+                dt {
+                    background: #cfdce6;
+                }
+                dd {
+                    border-bottom: 0;
+                    .title {
+                        h4 {
+                            font-size: 14px;
+                            display: inline-block;
+                            margin-right: 6px;
+                            margin-bottom: 5px;
+                        }
+                    }
+                    p {
+                        margin: 5px 0;
+                    }
+                    &:last-child {
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 회원서비스 > 법인.단체 > 사업자신청 구비서류 팝업
+/* (html/applicant-application-step1.html)
+/* =======================================*/
+.popup-applicant-application-content {
+    margin-bottom: 20px;
+    .table-type-02 {
+        tbody {
+            tr {
+                td {
+                    text-align: center;
+                    button {
+                        width: 136px;
+                    }
+                    &:nth-child(1) {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 회원서비스 > 단체정보관리 > 정보조회
+/* (html/information-inquiry.html)
+/* =======================================*/
+.information-inquiry {
+    .panel-group {
+        [aria-labelledby="tab1"] {
+            .table-type-02 {
+                tbody {
+                    tr {
+                        &:nth-child(4) {
+                            td {
+                                &:nth-child(3) {
+                                    padding: 10px;
+                                    .ceo-photo {
+                                        width: 100px;
+                                        height: 107px;
+                                        border: 1px solid #d1d1d1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    td {
+                        .btn-type-1-02 {
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+        [aria-labelledby="tab3"] {
+            .blue {
+                text-align: right;
+            }
+            .sub-top-btn-area {
+                margin-top: -38px;
+                button {
+                    &:first-child {
+                        width: 190px;
+                    }
+                    &:nth-child(2) {
+                        width: 100px;
+                    }
+                    &:nth-child(3), &:nth-child(4) {
+                        width: 110px;
+                    }
+                    &:last-child {
+                        width: 150px;
+                    }
+                }
+            }
+            .table-type-01 {
+                tbody {
+                    td {
+                        &:nth-child(4) {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+        [aria-labelledby="tab4"] {
+            .table-type-01 {
+                tbody {
+                    td {
+                        &:nth-child(3) {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 회원서비스 > 단체정보관리 > 정보조회 인물정보 팝업
+/* (html/information-inquiry.html)
+/* =======================================*/
+.popup-information-inquiry {
+    .table-type-02 {
+        tbody {
+            td {
+                .radio-type {
+                    label {
+                        margin-right: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 회원서비스 > 단체정보관리 > 변경사항요청 조회
+/* (html/request-change.html)
+/* =======================================*/
+.request-change {
+    .table-type-01 {
+        tbody {
+            td {
+                &:nth-child(3) {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 회원서비스 > 정책제안 조회
+/* (html/policy-proposal.html)
+/* =======================================*/
+.policy-proposal {
+    .table-type-01 {
+        tbody {
+            td {
+                &:nth-child(2) {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .table-btn-set {
+        .btn-popup-policy-proposal-write {
+            @extend .btn-type-3-02;
+        }
+    }
+}
+
+/* =======================================*/
+/* 회원서비스 > 정책제안 상세 내용 팝업
+/* (html/policy-proposal.html)
+/* =======================================*/
+.popup-policy-proposal-list {
+    .table-dt-dd {
+        margin-top: 10px;
+    }
+}
+
+/* =======================================*/
+/* 회원서비스 > 정책제안 글쓰기 팝업
+/* (html/policy-proposal.html)
+/* =======================================*/
+.popup-policy-proposal-write {
+    @extend .popup-qna-write;
+}
+
+/* =======================================*/
+/* 회원서비스 > 게시판 조회
+/* (html/notice-board.html)
+/* =======================================*/
+.notice-board {
+    .panel-group {
+        [role="tabpanel"] {
+            .table-type-01 {
+                tbody {
+                    td {
+                        &:nth-child(3) {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+            .table-btn-set {
+                .btn-popup-notice-board-write {
+                    @extend .btn-type-3-02;
+                }
+            }
+        }
+    }
+}
+.popup-notice-board-list {
+    table {
+        margin-bottom: 10px;
+        tbody {
+            td {
+                .btn-type-2-04 {
+                    @include btn-size($w: 76px, $h: 76px);
+                }
+            }
+        }
+    }
+}
+.popup-notice-board-write {
+    @extend .popup-qna-write;
+}
+
+/* =======================================*/
+/* 회원서비스 > 설문조사 조회
+/* (html/service-survey.html)
+/* =======================================*/
+.service-survey {
+    .service-survey-box {
+        display: inline-block;
+        width: 930px;
+        margin: 0 auto 30px auto;
+        > div {
+            position: relative;
+            display: inline-block;
+            width: 300px;
+            height: 233px;
+            text-align: center;
+            vertical-align: top;
+            padding: 50px 27px 30px 30px;
+            border: 1px solid #c8cacc;
+            margin-right: 10px;
+            border-radius: 7px;
+            background: #e6e6e6;
+            box-shadow: 0 1px 0 #c8cacc;
+            z-index: 1;
+            &::after {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                display: block;
+                width: 280px;
+                height: 212px;
+                content: "";
+                background: #fff url($bg-service-survey) no-repeat;
+                box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+                z-index: -1;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        .btn-type-1-04 {
+            width: 117px;
+            float: left;
+        }
+        .btn-type-1-02 {
+            width: 117px;
+            float: right;
+        }
+        h4 {
+            width: 240px;
+            height: 72px;
+            line-height: 68px;
+            font-size: 16px;
+            color: #003761;
+            text-align: center;
+            border: 2px solid #e1e4e6;
+        }
+        p {
+            width: 240px;
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            vertical-align: middle;
+            border-bottom: 1px solid #d6d6d6;
+            margin-bottom: 13px;
+        }
+    }
+    .content-box-area {
+        h3 {
+            margin-bottom: 0;
+        }
+    }
+    .table-type-01 {
+        tr {
+            td {
+                &:nth-child(2) {
+                    text-align: left;
+                }
+            }
+        }
+        [class^="btn-"] {
+            width: 100px;
+        }
+    }
+}
+
+/* =======================================*/
+/* 회원서비스 > 설문조사 상세 내용 팝업 (pc, mobile)
+/* (html/popup-service-survey-list.html)
+/* =======================================*/
+.popup-service-survey-list {
+    text-align: center;
+    &.popup-content {
+        padding: 50px 60px;
+    }
+    .title-area {
+        margin-bottom: 10px;
+        @extend %clearfix;
+        .table-dl {
+            float: left;
+            width: calc(100% - 164px);
+            dt {
+                min-width: 70px;
+            }
+            dd {
+                text-align: left;
+            }
+        }
+        .btn-type-2-03 {
+            float: right;
+            @include btn-size ($w: 154px, $h: 42px);
+        }
+    }
+    .text-area {
+        display: inline-block;
+        min-width: 280px;
+        max-width: 760px;
+        min-height: 290px;
+        padding: 0 30px;
+        border: 1px solid #d2d4d6;
+        border-radius: 10px;
+        box-shadow: 0 4px 0 0 #d2d4d6;
+        p {
+            color: #333;
+            text-align: left;
+            line-height: 2;
+            padding: 30px 20px;
+            border-bottom: 1px dashed #e6e6e6;
+        }
+    }
+}
+
+// 설문조사 760px 이하 디바이스 접속 대응
+.popup {
+    @media only screen and (max-width: 760px) {
+        &.mobile {
+            min-width: 320px;
+            [class*="popup-service-survey-"] {
+                &.popup-content {
+                    .title-area {
+                        .table-dl {
+                            width: 100%;
+                            dt {
+                                position: absolute;
+                                top: -9999px;
+                                visibility: hidden;
+                            }
+                            dd {
+                                font-size: 16px;
+                                min-width: 280px;
+                                width: 100%;
+                                height: auto;
+                                padding: 0;
+                                padding-bottom: 10px;
+                                border: 0;
+                            }
+                        }
+                        .btn-type-2-03 {
+                            font-size: 16px;
+                            float: inherit;
+                            min-width: 280px;
+                            width: 100%;
+                            margin-top: 10px;
+                        }
+                    }
+                    .text-area {
+                        padding: 0 10px;
+                        p {
+                            padding: 15px 10px 25px 10px;
+                        }
+                        .survey-question {
+                            padding: 20px 10px;
+                            &:nth-of-type(1) {
+                                padding-top: 40px;
+                            }
+                            .survey-result {
+                                li {
+                                    div {
+                                        margin-right: 0;
+                                    }
+                                }
+                                .input-type {
+                                    display: block;
+                                    min-width: calc(100% - 25px);
+                                    margin-left: 25px;
+                                    input {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                        .popup-btn-set {
+                            padding-left: 0;
+                            padding-right: 0;
+                            button {
+                                font-size: 16px;
+                                @include btn-size ($w: calc(50% - 13px), $h: 38px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 회원서비스 > 설문조사 상세 입력 팝업 (pc, mobile)
+/* (html/popup-service-survey-write.html)
+/* =======================================*/
+.popup-service-survey-write {
+    @extend .popup-service-survey-list;
+}
+
+/* =======================================*/
+/* 회원서비스 > 설문조사 결과보기 팝업 (pc, mobile)
+/* (html/_inc/popup-service-survey-result.html)
+/* =======================================*/
+.popup-service-survey-result {
+    .title-area {
+        margin-bottom: 10px;
+    }
+    .results-area {
+        border: 1px solid #b3b3b3;
+        h5 {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            padding: 16px 30px;
+            background: #faf6f5;
+            span {
+                font-weight: normal;
+            }
+        }
+        ol {
+            padding: 30px;
+            border-top: 1px dashed #e1e4e6;
+            border-bottom: 1px dashed #e1e4e6;
+            li {
+                width: 100%;
+                height: 34px;
+                line-height: 34px;
+                span {
+                    display: inline-block;
+                    &:first-child {
+                        float: left;
+                        min-width: 170px;
+                        color: #333;
+                    }
+                    &:last-child {
+                        float: right;
+                        color: #666;
+                        min-width: 80px;
+                        text-align: right;
+                    }
+                }
+                progress[value] {
+                    width: calc(100% - 260px);
+                    height: 26px;
+                    vertical-align: middle;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    border: none;
+                    &::-moz-progress-bar {
+                        background-color: #f05c26;
+                    }
+                    &::-webkit-progress-value {
+                        background-color: #f05c26;
+                    }
+                    &::-webkit-progress-bar {
+                        background-color: #fdeee9;
+                    }
+                }
+            }
+        }
+        .statistics {
+            min-height: 42px;
+            padding: 10px 30px;
+            p {
+                display: inline-block;
+                &:first-child {
+                    &:after {
+                        content: " / ";
+                    }
+                }
+            }
+            .fa {
+                color: #003761;
+                margin-right: 4px;
+            }
+            .fa-user {
+                font-size: 18px;
+                vertical-align: -1px;
+            }
+            .fa-commenting {
+                font-size: 16px;
+                margin-left: 15px;
+                transform: scale(-1, 1);
+            }
+        }
+    }
+}
+// 설문조사 760px 이하 디바이스 접속 대응
+.popup {
+    @media only screen and (max-width: 760px) {
+        &.mobile {
+            .popup-service-survey-result {
+                .title-area {
+                    position: absolute;
+                    top: -9999px;
+                    visibility: hidden;
+                }
+                .results-area {
+                    h5 {
+                        padding: 18px;
+                    }
+                    ol {
+                        padding: 18px;
+                        li {
+                            span {
+                                &:first-child {
+                                    min-width: auto;
+                                }
+                                &:last-child {
+                                    min-width: auto;
+                                }
+                            }
+                            progress {
+                                position: absolute;
+                                top: -9999px;
+                                visibility: hidden;
+                            }
+                        }
+                    }
+                    .statistics {
+                        width: auto;
+                        padding: 10px 18px;
+                        p {
+                            display: block;
+                            &:first-child {
+                                &:after {
+                                    content: "";
+                                }
+                            }
+                        }
+                        .fa {
+                            width: 16px;
+                            text-align: center;
+                        }
+                        .fa-commenting {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 기금사업신청 > 사업신청 조회
+/* (html/business-application.html)
+/* =======================================*/
+.business-application {
+    .panel-group {
+        [aria-labelledby="tab1"] {
+            table {
+                td {
+                    .select-box {
+                        width: 420px;
+                    }
+                    .checkbox-type {
+                        @extend %clearfix;
+                        li {
+                            float: left;
+                            width: percent(5);
+                            &:nth-child(5n) {
+                                margin-bottom: 10px;
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                    &.input-price {
+                        .input-type {
+                            margin-bottom: 6px;
+                            label {
+                                span {
+                                    display: inline-block;
+                                    &:first-child {
+                                        width: 100px;
+                                        letter-spacing: -0.04em;
+                                    }
+                                }
+                                input {
+                                    padding-right: 0;
+                                }
+                            }
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        [aria-labelledby="tab3"] {
+            table {
+                tbody {
+                    td {
+                        .add-file-area {
+                            float: left;
+                            width: calc(100% - 106px);
+                            margin-top: 3px;
+                        }
+                        > .btn-type-1-02 {
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+ }
+
+/* =======================================*/
+/* 기금사업신청 > 사업신청 상세팝업
+/* (html/business-application-list.html)
+/* =======================================*/
+.popup-business-application {
+    table {
+        td {
+            .checkbox-type {
+                @extend %clearfix;
+                li {
+                    float: left;
+                    width: percent(4);
+                    &:nth-child(4n) {
+                        margin-bottom: 7px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+            [class^="btn-"] {
+                margin-left: 6px;
+            }
+            &.download {
+                p {
+                    padding-bottom: 6px;
+                    span {
+                        display: inline-block;
+                        min-width: 190px;
+                        letter-spacing: -0.04em;
+                    }
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
+                    .btn-download {
+                        @extend %btn-type-1-02;
+                    }
+                }
+            }
+            .summary {
+                ol {
+                    padding-left: 13px;
+                }
+            }
+        }
+    }
+    .popup-btn-set {
+        .popup-close {
+            width: 104px;
+        }
+    }
+ }
+
+/* =======================================*/
+/* 기금사업신청 > 결과조회
+/* (html/view-results.html)
+/* =======================================*/
+.view-results {
+    .table-type-01 {
+        tbody {
+            td {
+                &:nth-child(5) {
+                    [class^="btn-"] {
+                        width: 90px;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 기금사업신청 > 결과조회 상세 내용 팝업
+/* (html/view-results.html)
+/* =======================================*/
+.popup-view-results-announcement {
+    @extend .popup-notices;
+}
+.popup-view-results-business {
+    table {
+        margin-bottom: 10px;
+        td {
+            .checkbox-type {
+                @extend %clearfix;
+                li {
+                    float: left;
+                    width: percent(4);
+                    &:nth-child(4n) {
+                        margin-bottom: 7px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .table-dl {
+        dt {
+            line-height: 1.5;
+        }
+        .add-file-area {
+            padding: 10px;
+            ul {
+                @extend %clearfix;
+                li {
+                    height: 26px;
+                    line-height: 26px;
+                }
+                &:nth-child(1) {
+                    float: left;
+                    width: calc(100% - 220px);
+                    li {
+                        @include ellipsis(1);
+                    }
+                }
+                &:nth-child(2) {
+                    float: right;
+                    width: 210px;
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 기금사업신청 > 자금사용보고서등록 조회
+/* (html/register-your-funds-usage-report.html)
+/* =======================================*/
+.register-your-funds-usage-report {
+    @extend .view-results;
+}
+
+/* =======================================*/
+/* 기금사업신청 > 자금사용보고서등록 상세 내용 팝업
+/* (html/register-your-funds-usage-report.html)
+/* =======================================*/
+.popup-register-your-funds-usage-report-announcement {
+    @extend .popup-notices;
+}
+.popup-register-your-funds-usage-report-business {
+    @extend .popup-view-results-business;
+    .table-type-02 {
+        tbody {
+            tr {
+                &:nth-child(4) {
+                    th {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+            td {
+                .input-type {
+                    @include input-type($w: 210px);
+                }
+            }
+        }
+    }
+    .table-dl {
+        .add-file-area {
+            ul {
+                @extend %clearfix;
+                li {
+                    height: 34px;
+                    line-height: 34px;
+                }
+                &:nth-child(1) {
+                    float: left;
+                    width: calc(100% - 370px);
+                    li {
+                        @include ellipsis(1);
+                    }
+                }
+                &:nth-child(2) {
+                    float: right;
+                    width: 360px;
+                    .file {
+                        width: 100%;
+                        [class^="icon-"] {
+                            width: calc(100% - 107px);
+                            margin-top: 3px;
+                        }
+                        [class^="btn-"] {
+                            height: 30px;
+                            line-height: 28px;
+                            margin-top: 1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 메인 > 외부 메인
+/* (html/main.html)
+/* =======================================*/
+.main-carousel-slider {
+    height: 400px;
+    article {
+        position: relative;
+        height: 400px;
+        > img {
+            @include w-center ($position: absolute, $w-percent: 50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+        .wrap {
+            position: relative;
+            @include w-center ($position: absolute, $w-percent: 50%);
+            .slider-slogan-banner {
+                position: absolute;
+                left: 50%;
+                top: 140px;
+                display: block;
+                width: 478px;
+                margin-left: -404px;
+                p {
+                    display: block;
+                    text-align: center;
+                    &:first-child {
+                        font-size: 50px;
+                        font-weight: bold;
+                        letter-spacing: -0.05em;
+                        line-height: 1.2;
+                        padding: 0 25px;
+                        margin-bottom: 25px;
+                        @include ellipsis(2);
+                    }
+                    &:last-child {
+                        font-size: 18px;
+                        color: #fff;
+                        letter-spacing: -0.05em;
+                        height: 40px;
+                        line-height: 40px;
+                        padding: 0 15px;
+                        background: #8ab1e6;
+                        border-top-left-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                        @include ellipsis(1);
+                    }
+                }
+                text-align: left;
+            }
+            .slider-menu-banner {
+                position: absolute;
+                top: 53px;
+                left: 50%;
+                margin-left: 225px;
+                a {
+                    position: relative;
+                    display: inline-block;
+                    float: left;
+                    width: 142px;
+                    height: 142px;
+                    font-size: 16px;
+                    margin-right: 10px;
+                    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.2);
+                    p {
+                        @include wh-center ($position: absolute, $h-percent: 50%, $w-percent: 50%);
+                        text-align: center;
+                        padding-top: 40px;
+                    }
+                    // &:nth-child(1) {
+                    //     position: relative;
+                    //     background: #c5daeb;
+                    //     overflow: hidden;
+                    //     &:before {
+                    //         position: absolute;
+                    //         top: -22px;
+                    //         left: -6px;
+                    //         font-size: 70px;
+                    //         font-weight: bold;
+                    //         line-height: 1;
+                    //         color: hsla(0, 0%, 0%, 0.08);
+                    //         content: "01";
+                    //     }
+                    // }
+                    &:nth-child(1) {
+                        background: #c5daeb url($link-box-01) -4px -12px no-repeat;
+                    }
+                    &:nth-child(2) {
+                        background: #c5daeb url($link-box-02) -4px -12px no-repeat;
+                    }
+                    &:nth-child(3) {
+                        background: #c5daeb url($link-box-03) -4px -12px no-repeat;
+                    }
+                    &:nth-child(4) {
+                        background: #c5daeb url($link-box-04) -4px -12px no-repeat;
+                    }
+                    &:nth-child(3n) {
+                        clear: both;
+                    }
+                    &:nth-child(even) {
+                        margin-right: 0;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .ui-carousel__button {
+        &:before {
+            display: block;
+            content: "";
+            width: 24px;
+            height: 46px;
+        }
+        &:hover, &:focus {
+            -webkit-filter: drop-shadow(0 0 5px #fff);
+            filter: drop-shadow(0 0 5px #fff);
+        }
+        &.ui-carousel__button--prev {
+            left: 50%;
+            margin-left: -600px;
+            &:before {
+                background: url($btn-arrow-left) left center no-repeat;
+            }
+        }
+        &.ui-carousel__button--next {
+            right: 50%;
+            margin-right: -600px;
+            &:before {
+                background: url($btn-arrow-right) right center no-repeat;
+            }
+        }
+    }
+}
+.user-main {
+    article {
+        h2 {
+            font-size: 20px;
+            height: 40px;
+            line-height: 40px;
+            text-align: left;
+        }
+        &:first-child {
+            @include span(6);
+            .tablist {
+                width: 100%;
+                margin-left: 0;
+                border: 1px solid #dbdbdb;
+                border-bottom-width: 0;
+                [role="tab"] {
+                    padding: 0;
+                    span {
+                        font-size: 16px;
+                        height: 44px;
+                        line-height: 42px;
+                        background: #fff;
+                        border: 0;
+                        border-right: 1px solid #dbdbdb;
+                        border-bottom: 1px solid #dbdbdb;
+                        &:hover, &:focus {
+                            background: #d14411;
+                            border: 0;
+                        }
+
+                    }
+                    &:first-child {
+                        span {
+                            border-left-width: 1px;
+                            border-top-left-radius: 0;
+                            border-bottom-left-radius: 0;
+                        }
+                    }
+                    &:last-child {
+                        span {
+                            border-right: 0;
+                            border-top-right-radius: 0;
+                            border-bottom-right-radius: 0;
+                        }
+                    }
+                    &[aria-selected='true'] {
+                        span {
+                            background: #d14411;
+                            border: 0;
+                        }
+                    }
+                }
+            }
+            .panel-group {
+                height: 634px;
+                padding: 30px;
+                border: 1px solid #dbdbdb;
+                border-top-width: 0;
+                margin-top: 0;
+                clear: both;
+            }
+        }
+        &:last-child {
+            @include span(6 last);
+            .link-item-box {
+                position: relative;
+                height: 210px;
+                @include layout(6);
+                @include span(3);
+                &:nth-of-type(2n) {
+                    @include last;
+                }
+                &:nth-of-type(1) {
+                    background: #e6f0c0 url($link-item-01) center 44px no-repeat;
+                    .btn-item-more {
+                        background: #d2e48e;
+                    }
+                }
+                &:nth-of-type(2) {
+                    background: #d6faff url($link-item-02) center 46px no-repeat;
+                    .btn-item-more {
+                        background: #b5f6ff;
+                    }
+                }
+                &:nth-of-type(3) {
+                    background: #ede1f5 url($link-item-03) center 49px no-repeat;
+                    .btn-item-more {
+                        background: #dfc9ed;
+                    }
+                }
+                &:nth-of-type(4) {
+                    background: #ffeb9a url($link-item-04) center 44px no-repeat;
+                    .btn-item-more {
+                        background: #ffdb49;
+                    }
+                }
+                &:nth-of-type(5) {
+                    background: url($link-item-05) 186px 135px no-repeat;
+                    .notices-list {
+                        height: 154px;
+                        .ui-carousel__tablist--wrapper {
+                            .ui-carousel__toggle--animate {
+                                background: #b3b3b3;
+                                color: #fff;
+                                &:hover, &:focus {
+                                    background: #777;
+                                }
+                            }
+                            .ui-carousel__indicators {
+                                .ui-carousel__tab {
+                                    background: #b3b3b3;
+                                    box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+                                    transition: all 0.2s cubic-bezier(0.01, 0.35, 0, 1.01);
+                                    &:hover, &:focus {
+                                        background: #777;
+                                    }
+                                    &.active {
+                                        background: #0065b3;
+                                        width: 24px;
+                                        &:focus {
+                                            background: #0065b3;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .ui-carousel__tabpanel-wrapper {
+                            width: 222px;
+                            height: 154px;
+                            .ui-carousel__tabpanel {
+                                width: 222px;
+                                height: 154px;
+                                a {
+                                    text-align: left;
+                                    .notice-text {
+                                        @include ellipsis(3);
+                                        padding-top: 12px;
+                                        clear: both;
+                                    }
+                                    .notice-date {
+                                        display: block;
+                                        font-weight: bold;
+                                        color: #666;
+                                        margin-top: 12px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &:nth-of-type(6) {
+                    background: url($link-item-06) 197px 121px no-repeat;
+                    .resource-text {
+                        position: relative;
+                        @include ellipsis(1);
+                        padding-top: 12px;
+                        padding-left: 10px;
+                        clear: both;
+                        &:before {
+                            position: absolute;
+                            top: 22px;
+                            left: 0;
+                            display: block;
+                            width: 3px;
+                            height: 3px;
+                            background: #4d4d4d;
+                            content: "";
+                        }
+                    }
+                    .resource-date {
+                        display: block;
+                        font-weight: bold;
+                        color: #666;
+                    }
+                }
+                &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4) {
+                    margin-bottom: 24px;
+                    h3 {
+                        font-size: 18px;
+                        font-weight: normal;
+                        color: #333;
+                        text-align: center;
+                        letter-spacing: -0.04em;
+                        margin-top: 147px;
+                    }
+                    .btn-item-more {
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        width: 50px;
+                        height: 50px;
+                        text-indent: -9999px;
+                        &:before {
+                            position: absolute;
+                            top: 23px;
+                            left: 11px;
+                            width: 28px;
+                            height: 4px;
+                            background: #fff;
+                            content: "";
+                        }
+                        &:after {
+                            position: absolute;
+                            top: 11px;
+                            left: 23px;
+                            width: 4px;
+                            height: 28px;
+                            background: #fff;
+                            content: "";
+                        }
+                    }
+                }
+                &:nth-of-type(5), &:nth-of-type(6) {
+                    padding: 26px 30px;
+                    background-color: #f0f3f5;
+                    h3 {
+                        float: left;
+                        font-size: 20px;
+                        color: #003a66;
+                    }
+                    .btn-item-more {
+                        float: right;
+                        font-weight: bold;
+                        line-height: 1;
+                        border-bottom: 1px solid #4c4c4c;
+                        margin-top: 5px;
+                        &:after {
+                            display: inline-block;
+                            @include fa($fa-icon: "\f105", $fz: 18px);
+                            padding-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.footer-link-banner {
+    background: #f5f8fa;
+    border-top: 1px solid #d9dee2;
+    padding: 24px 0;
+    .wrap {
+        @include layout(12);
+        @extend %clearfix;
+        h4 {
+            font-size: 14px;
+            color: #333;
+            line-height: 46px;
+            @include span(1);
+        }
+        .link-banner-area {
+            position: relative;
+            @include span(11 last);
+            padding: 0 23px;
+            height: 46px;
+            border: 1px solid #dbdbdb;
+            overflow: hidden;
+            .ui-carousel__tabpanel-wrapper {
+                width: 100%;
+                height: 46px;
+                background: #fff;
+            }
+            ul {
+                float: left;
+                width: 1054px;
+                overflow: hidden;
+                @extend %clearfix;
+                li {
+                    float: left;
+                    width: percent(5);
+                    height: 46px;
+                    line-height: 46px; 
+                    text-align: center;
+                    border-right: 1px solid #dbdbdb;
+                    &:last-child {
+                        border-right: 0;
+                    }
+                    img {
+                        vertical-align: -9px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .ui-carousel__button {
+                position: absolute;
+                top: 0;
+                width: 24px;
+                height: 44px;
+                line-height: 42px;
+                margin-top: 0;
+                background: #fff;
+                &.ui-carousel__button--prev {
+                    left: 0;
+                    border-right: 1px solid #ccc;
+                    &:before {
+                        @include fa($fa-icon: "\f053", $fz: 10px, $color: #676767);
+                        background: transparent;
+                    }
+                }
+                &.ui-carousel__button--next {
+                    right: 0;
+                    border-left: 1px solid #ccc;
+                    &:before {
+                        @include fa($fa-icon: "\f054", $fz: 10px, $color: #676767);
+                        background: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 통계 > 국내 > 총괄 조회 (재원/주체별, 지역별, 분야별, 정부별)
+/* (html/domestic-statistics-list.html)
+/* =======================================*/
+.domestic-statistics-list {
+    .panel-group {
+        [role="tabpanel"] {
+            .content-box-area {
+                &:first-child {
+                    padding-top: 15px;
+                }
+                .align-area {
+                    position: relative;
+                    .left-area {
+                        width: calc((100% - 90px)/2);
+                        text-align: center;
+                        @include h-center ($position: absolute, $h-percent: 50%);
+                        padding-right: 30px;
+                        margin-right: 0;
+                    }
+                    .right-area {
+                        width: calc((100% + 30px)/2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 북한현황지표 > SDGs > SDGs
+/* (html/sdgs.html)
+/* =======================================*/
+.sdgs-area {
+    .content-box-area {
+        ul {
+            padding: 30px;
+            background: #eaeaea;
+            @extend %clearfix;
+            li {
+                float: left;
+                width: calc(100%/2 - 17px);
+                margin-right: 27px;
+                &:nth-child(odd) {
+                    margin-left: 7px;
+                }
+                &:nth-child(even) {
+                    margin-right: 0;
+                    margin-bottom: 20px;
+                }
+                .hexagon-wrap {
+                    position: relative;
+                    float: left;
+                    z-index: 2;
+                    img {
+                        @include wh-center ($position: absolute, $h-percent: 50%, $w-percent: 50%);
+                    }
+                }
+                .text-area {
+                    float: left;
+                    position: relative;
+                    width: calc(100% - 70px);
+                    height: 100px;
+                    padding-left: 98px;
+                    margin-left: -30px;
+                    background: #fff;
+                    border-radius: 0 10px 10px 0;
+                    z-index: 1;
+                    .number {
+                        @include h-center ($position: absolute, $h-percent: 50%);
+                        left: 49px;
+                        font-family: Arial, sans-serif;
+                        font-size: 30px;
+                        font-weight: bold;
+                    }
+                    .text {
+                        @include h-center ($position: absolute, $h-percent: 50%);
+                        h4 {
+                            font-size: 15px;
+                        }
+                        p {
+                            font-size: 13px;
+                            letter-spacing: -0.05em;
+                            padding-right: 15px;
+                        }
+                    }
+                }
+                &:nth-of-type(1) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #76aca5);
+                    }
+                    .text-area {
+                        border: 1px solid #76aca5;
+                        .number, h4 {
+                            color: #76aca5;
+                        }
+                    }
+                }
+                &:nth-of-type(2) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #b8d841);
+                    }
+                    .text-area {
+                        border: 1px solid #b8d841;
+                        .number, h4 {
+                            color: #b8d841;
+                        }
+                    }
+                }
+                &:nth-of-type(3) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #f36f57);
+                    }
+                    .text-area {
+                        border: 1px solid #f36f57;
+                        .number, h4 {
+                            color: #f36f57;
+                        }
+                    }
+                }
+                &:nth-of-type(4) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #e7b91c);
+                    }
+                    .text-area {
+                        border: 1px solid #e7b91c;
+                        .number, h4 {
+                            color: #e7b91c;
+                        }
+                    }
+                }
+                &:nth-of-type(5) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #ef4340);
+                    }
+                    .text-area {
+                        border: 1px solid #ef4340;
+                        .number, h4 {
+                            color: #ef4340;
+                        }
+                    }
+                }
+                &:nth-of-type(6) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #245e82);
+                    }
+                    .text-area {
+                        border: 1px solid #245e82;
+                        .number, h4 {
+                            color: #245e82;
+                        }
+                    }
+                }
+                &:nth-of-type(7) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #fe9544);
+                    }
+                    .text-area {
+                        border: 1px solid #fe9544;
+                        .number, h4 {
+                            color: #fe9544;
+                        }
+                    }
+                }
+                &:nth-of-type(8) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #a56b67);
+                    }
+                    .text-area {
+                        border: 1px solid #a56b67;
+                        .number, h4 {
+                            color: #a56b67;
+                        }
+                    }
+                }
+                &:nth-of-type(9) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #9b92c8);
+                    }
+                    .text-area {
+                        border: 1px solid #9b92c8;
+                        .number, h4 {
+                            color: #9b92c8;
+                        }
+                    }
+                }
+                &:nth-of-type(10) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #e06284);
+                    }
+                    .text-area {
+                        border: 1px solid #e06284;
+                        .number, h4 {
+                            color: #e06284;
+                        }
+                    }
+                }
+                &:nth-of-type(11) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #5cb3b7);
+                    }
+                    .text-area {
+                        border: 1px solid #5cb3b7;
+                        .number, h4 {
+                            color: #5cb3b7;
+                        }
+                    }
+                }
+                &:nth-of-type(12) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #fad22d);
+                    }
+                    .text-area {
+                        border: 1px solid #fad22d;
+                        .number, h4 {
+                            color: #fad22d;
+                        }
+                    }
+                }
+                &:nth-of-type(13) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #b4c260);
+                    }
+                    .text-area {
+                        border: 1px solid #b4c260;
+                        .number, h4 {
+                            color: #b4c260;
+                        }
+                    }
+                }
+                &:nth-of-type(14) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #4685ce);
+                    }
+                    .text-area {
+                        border: 1px solid #4685ce;
+                        .number, h4 {
+                            color: #4685ce;
+                        }
+                    }
+                }
+                &:nth-of-type(15) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #669d65);
+                    }
+                    .text-area {
+                        border: 1px solid #669d65;
+                        .number, h4 {
+                            color: #669d65;
+                        }
+                    }
+                }
+                &:nth-of-type(16) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #c792c8);
+                    }
+                    .text-area {
+                        border: 1px solid #c792c8;
+                        .number, h4 {
+                            color: #c792c8;
+                        }
+                    }
+                }
+                &:nth-of-type(17) {
+                    .hexagon-wrap {
+                        @include hexagon($bg: #c3926e);
+                    }
+                    .text-area {
+                        border: 1px solid #c3926e;
+                        .number, h4 {
+                            color: #c3926e;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .logo-goals {
+        text-align: center;
+        padding-top: 30px;
+    }
+}
+// sdgs.backup.html 파일 CSS 백업
+// .sdgs-area {
+//     padding: 0 !important;
+//     @include layout(3 10px/310px);
+//     article {
+//         position: relative;
+//         @extend %clearfix;
+//         h3 {
+//             position: absolute;
+//             top: 42px;
+//             left: 20px;
+//             width: 60px;
+//             height: 100px;
+//             font-size: 20px;
+//             color: #fff;
+//             text-align: center;
+//             &:before {
+//                 display: block;
+//                 padding-bottom: 10px;
+//                 background-position: center 0 !important;
+//                 content: "";
+//             }
+//         }
+//         ul {
+//             display: inline-block;
+//             margin: 35px 40px 35px 0;
+//             vertical-align: top;
+//             &:nth-of-type(1) {
+//                 margin-left: 100px;
+//             }
+//             li {
+//                 position: relative;
+//                 min-height: 30px;
+//                 padding: 4px 10px;
+//                 color: #fff;
+//                 &:before {
+//                     position: absolute;
+//                     top: 14px;
+//                     left: 0;
+//                     display: block;
+//                     width: 3px;
+//                     height: 3px;
+//                     background: #fff;
+//                     content: "";
+//                 }
+//             }
+//         }
+//         &:nth-of-type(1) {
+//             @include span(1);
+//             height: 830px;
+//             background: #051c32;
+//             h3 {
+//                 &:before {
+//                     height: 52px;
+//                     background: url($icon-sdg) no-repeat;
+//                 }
+//             }
+//             p {
+//                 position: absolute;
+//                 left: 0;
+//                 right: 0;
+//                 bottom: 45px;
+//                 font-family: Arial, sans-serif;
+//                 font-size: 37px;
+//                 text-align: center;
+//                 letter-spacing: 0.02em;
+//                 line-height: 1;
+//                 color: rgba(#fff, 0.3);
+//                 span {
+//                     font-size: 35px;
+//                     letter-spacing: -0.02em;
+//                 }
+//                 strong {
+//                     font-size: 75px;
+//                     line-height: 0.9;
+//                     letter-spacing:0;
+//                 }
+//             }
+//         }
+//         &:nth-of-type(2) {
+//             @include span(2 at 2 last);
+//             background: #1f54ad;
+//             h3 {
+//                 &:before {
+//                     height: 44px;
+//                     background: url($icon-health) no-repeat;
+//                 }
+//             }
+//         }
+//         &:nth-of-type(3) {
+//             @include span(1 at 2);
+//             background: #db8703;
+//             h3 {
+//                 &:before {
+//                     height: 68px;
+//                     background: url($icon-agriculture) no-repeat;
+//                 }
+//             }
+//         }
+//         &:nth-of-type(4) {
+//             @include span(1 at 3 last);
+//             height: 235px;
+//             background: #c34c14;
+//             h3 {
+//                 &:before {
+//                     height: 60px;
+//                     background: url($icon-energy) no-repeat;
+//                 }
+//             }
+//         }
+//         &:nth-of-type(5) {
+//             @include span(1 at 2);
+//             background: #689a13;
+//             h3 {
+//                 &:before {
+//                     height: 50px;
+//                     background: url($icon-forest) no-repeat;
+//                 }
+//             }
+//         }
+//         &:nth-of-type(6) {
+//             @include span(1 at 3 last);
+//             height: 235px;
+//             margin-top: -35px;
+//             background: #0f7b1f;
+//             h3 {
+//                 &:before {
+//                     height: 66px;
+//                     background: url($icon-environment) no-repeat;
+//                 }
+//             }
+//         }
+//         &:nth-of-type(3),
+//         &:nth-of-type(4),
+//         &:nth-of-type(5) {
+//             margin-top: 10px;
+//         }
+//     }
+// }

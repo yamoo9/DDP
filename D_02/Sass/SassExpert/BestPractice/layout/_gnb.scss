@@ -1,0 +1,218 @@
+/* GNB 영역 */
+.gnb-area {
+    @extend %clearfix;
+    .logo {
+        float: left;
+        margin-top: 10px;
+    }
+    .gnb {
+        float: right;
+        height: 72px;
+        #gnb-menu {
+            float: left;
+            @extend %clearfix;
+            li {
+                display: inline-block;
+                line-height: 72px;
+                a {
+                    display: block;
+                    font-size: 16px;
+                    font-weight: bold;
+                    padding: 0 26px;
+                    @extend %clearfix;
+                }
+            }
+        }
+        .btn-gnb-all {
+            float: right;
+            width: 24px;
+            height: 19px;
+            margin-top: 26px;
+            text-indent: -9999px;
+            background: url($btn-gnb-all) no-repeat;
+            outline: 0;
+        }
+    }
+}
+
+// GNB Sitemap
+#gnb-all-menu {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: linear-gradient(#475b6b 46px, #fff 46px);
+    box-shadow: 0 8px 10px rgba(0,0,0,0.15);
+    visibility: hidden;
+    overflow: hidden;
+    transition: visibility .3s, height .3s;
+    &.open {
+        visibility: visible;
+        height: 564px;
+        z-index: 1000;
+    }
+    .wrap {
+        position: relative;
+        @extend %clearfix;
+        .panel {
+            float: left;
+            width: 200px;
+            h2 {
+                position: relative;
+                font-weight: normal;
+                background: #475b6b;
+                a {
+                    font-size: 18px;
+                    display: block;
+                    line-height: 46px;
+                    text-align: center;
+                    color: #c5d2db;
+                    &:before {
+                        position: absolute;
+                        top: 10px;
+                        display: block;
+                        width: 1px;
+                        height: 26px;
+                        background: #5d7385;
+                        content: "";
+                    }
+                    &:hover, &:focus {
+                        color: #fff;
+                        background: #758c9e;
+                        &:before {
+                            position: absolute;
+                            top: 0;
+                            right: -1px;
+                            width: 1px;
+                            height: 46px;
+                            background: #758c9e;
+                            content: "";
+                            z-index: 10;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(6) {
+                h2 {
+                    a {
+                        &:hover, &:focus {
+                            &:before, &:after {
+                                display: block;
+                                content: "";
+                                visibility: hidden;
+                            }
+                        }
+                    }
+                    &:first-child {
+                        a {
+                            &:after {
+                                position: absolute;
+                                top: 10px;
+                                right: 0;
+                                display: block;
+                                width: 1px;
+                                height: 26px;
+                                background: #758c9e;
+                                content: "";
+                            }
+                        }
+                    }
+                }
+            }
+            > ul {
+                height: 518px;
+                border-left: 1px solid #dde5eb;
+                background: #fff;
+                > li {
+                    &:first-child {
+                        &:before {
+                            content: "";
+                            display: block;
+                            padding-top: 12px;
+                        }
+                    }
+                    a {
+                        display: block;
+                        font-size: 14px;
+                        &:hover, &:focus {
+                            background: #cee4f5;
+                            text-decoration: underline;
+                        }
+                    }
+                    > a {
+                        font-weight: bold;
+                        padding: 4px 20px;
+                    }
+                    > ul {
+                        > li {
+                            > a {
+                                position: relative;
+                                color: #757575;
+                                padding: 4px 20px 4px 30px;
+                                &:before {
+                                    position: absolute;
+                                    top: 13px;
+                                    left: 20px;
+                                    display: block;
+                                    width: 3px;
+                                    height: 3px;
+                                    background: #757575;
+                                    content: "";
+                                }
+                                &:hover, &:focus {
+                                    color: #003761;
+                                     &:before {
+                                        background: #003761;
+                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(6) {
+                > ul {
+                    border-right: 1px solid #dde5eb;
+                    &:nth-of-type(1) {
+                        height: 150px;
+                    }
+                    &:nth-of-type(2) {
+                        height: 322px;
+                    }
+                }
+            }
+        }
+        .btn-gnb-close {
+            position: absolute;
+            right: 24px;
+            bottom: 0;
+            width: 54px;
+            height: 54px;
+            text-indent: -9999px;
+            background: #003761;
+            &:before {
+                position: absolute;
+                top: 27px;
+                left: 13px;
+                display: block;
+                width: 28px;
+                height: 1px;
+                background: #fff;
+                transform: rotate(45deg);
+                content: "";
+            }
+            &:after {
+                position: absolute;
+                top: 27px;
+                left: 13px;
+                display: block;
+                width: 28px;
+                height: 1px;
+                background: #fff;
+                transform: rotate(-45deg);
+                content: "";
+            }
+        }
+    }
+}

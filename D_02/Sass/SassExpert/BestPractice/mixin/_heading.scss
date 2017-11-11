@@ -1,0 +1,10 @@
+// Heading Font Size & Line-height 설정
+@mixin hd-font ($psd-fz, $line-num: 1) {
+	$fz: retina($psd-fz);
+	$lh: (retina($body-fz) * $line-height) * $line-num;
+	$round-px: round( de-unit($lh) ) * 1px;
+	font-size: rem($fz);
+	font-size: $fz;
+	line-height: rem($round-px);
+	line-height: $round-px;
+}

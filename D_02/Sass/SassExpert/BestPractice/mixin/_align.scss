@@ -1,0 +1,22 @@
+@mixin wh-center ($position: relative, $h-percent: 50%, $w-percent: 50%) {
+    position: $position;
+    top: $h-percent;
+    left: $w-percent;
+    -ms-transform:  translate(-$h-percent, -$w-percent);
+    -webkit-transform:  translate(-$h-percent, -$w-percent);
+    transform: translate(-$h-percent, -$w-percent);
+}
+@mixin w-center ($position: relative, $w-percent: 50%) {
+    position: $position;
+    left: $w-percent;
+    -ms-transform: translateX(-$w-percent);
+    -webkit-transform: translateX(-$w-percent);
+    transform: translateX(-$w-percent);
+}
+@mixin h-center ($position: relative, $h-percent: 50%) {
+    position: $position;
+    top: $h-percent;
+    -ms-transform: translateY(-$h-percent);
+    -webkit-transform: translateY(-$h-percent);
+    transform: translateY(-$h-percent);
+}

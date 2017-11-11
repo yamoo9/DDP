@@ -1,0 +1,4 @@
+// 단위 제거
+@function de-unit($unit) {
+  @return $unit / ($unit * 0 + 1);
+}

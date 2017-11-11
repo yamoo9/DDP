@@ -1,0 +1,10 @@
+// 말줄임 (라인 수)
+@mixin ellipsis($line-num) {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $line-num;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+

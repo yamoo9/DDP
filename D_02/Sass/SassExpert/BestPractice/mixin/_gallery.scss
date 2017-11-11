@@ -1,0 +1,18 @@
+@mixin gallery($num-of-columns, $num-gutter) {
+    width: 100%;
+    @extend %clearfix;
+    @for $i from 1 through $num-of-columns {
+        &.col#{$i} {
+            $gutter: $num-gutter * ($i - 1);
+            $col: calc((100% - #{$gutter}) / #{$i});
+            li {
+                float: left;
+                width: $col;
+                margin-right: $num-gutter;
+                &:nth-of-type(#{ $i + n }) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

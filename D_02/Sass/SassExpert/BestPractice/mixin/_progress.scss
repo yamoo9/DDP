@@ -1,0 +1,31 @@
+@mixin progress($bg: #959595, $value: #07d2cf, $w: 300px, $h:16px) {
+    progress[value] {
+        background: $bg !important;
+        width: $w;
+        height: $h;
+        color: $value;
+        // IE 지원을 위한 처리
+        span {
+            display: none;
+            background: $value;
+            height: inherit;
+        }
+        &[role][aria-valuenow] {
+            background: $bg !important;
+            width: $w;
+            height: $h;
+        }
+        &::-webkit-progress-value,
+        &::-webkit-progress-inner-element {
+            background: $value;
+        }
+        &::-webkit-progress-bar {
+            background: $bg !important;
+        }
+        &::-moz-progress-bar,
+        &::-webkit-progress-value,
+        &[aria-valuenow]:before {
+            background: $value;
+        }
+    }
+}

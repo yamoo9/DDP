@@ -1,0 +1,45 @@
+// =======================================
+// 김효진 CSS Style 관리
+// =======================================
+
+/* =======================================*/
+/* 통계 > 국제 > 주체별 조회 (통계, 시계열, 차트)
+/* (html/international-field-list.html)
+/* =======================================*/
+.international-by-subject-list {
+    .panel-group {
+        [role="tabpanel"] {
+            .web-graph-area {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 통계 > 국제 > 분야별 조회 (통계, 시계열, 차트)
+/* (html/international-field-list.html)
+/* =======================================*/
+.international-field-list {
+    .panel-group {
+        [role="tabpanel"] {
+            .web-graph-area {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* 통계 > 국제 > 지원채널별 조회 (통계, 시계열, 차트)
+/* (html/international-by-support-channel-list.html)
+/* =======================================*/
+.international-by-support-channel-list {
+    .panel-group {
+        [role="tabpanel"] {
+            .web-graph-area {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

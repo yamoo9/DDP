@@ -1,0 +1,31 @@
+// =======================================
+// Fonts Style Settings
+// =======================================
+
+// 웹폰트 본고딕 설정 (http://webdir.tistory.com/440)
+@import url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css);
+
+// 시스템폰트 설정
+$font-family: "malgun gothic", "Noto Sans Korean", sans-serif, serif;
+
+// Rem 단위 계산을 위한 기본 사이즈
+$html-fz: 10px;
+
+// 본문 폰트 사이즈
+$body-fz: 14px;
+
+// 본문 기본 행간 비율
+$line-height: 1.5;
+
+// 폰트 기본 설정
+html {
+    font-size: $html-fz;
+    body {
+        font-family: $font-family;
+        font-size: rem($body-fz);
+        -webkit-font-smoothing: antialiased;
+        color: $font-base;
+        letter-spacing: -0.03em;
+        line-height: $line-height;
+    }
+}

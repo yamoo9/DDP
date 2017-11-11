@@ -1,0 +1,6 @@
+// 폰트 사이즈 설정 (font-size)
+@mixin psd-fz ($fz) {
+  $retina-fz: retina($fz);
+  font-size: $retina-fz;
+  font-size: rem($retina-fz);
+}

@@ -1,0 +1,112 @@
+/*! guide.css © inyoung, 2017.07.20 */
+
+@charset "utf-8";
+
+// =======================================
+// Typography
+// =======================================
+@import url(https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css);
+
+// =======================================
+// UI Kit 플러그인
+// =======================================
+@import "jiy-style";
+
+// =======================================
+// Guide Style
+// =======================================
+html {
+    font-size: 10px;
+}
+body {
+    font-family: 'Noto Sans Korean', sans-serif, serif !important;
+    font-size: rem(14px);
+    line-height: 1.5;
+    height: 100vh;
+    background: #ededed;
+    * {
+        box-sizing: border-box;
+        word-wrap: break-word;
+    }
+}
+.guide {
+    margin-bottom: 0;
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: rem(20px);
+    }
+}
+.wrap {
+    min-width: 480px;
+    max-width: 1000px;
+    padding: 20px;
+    margin: 0 auto;
+    padding: rem(24px);
+    article {
+        .title {
+            font-size: rem(28px);
+            font-weight: bold;
+            color: #1566c1;
+            letter-spacing: -0.03em;
+            &:before {
+                content: "\f013";
+                font-family: "FontAwesome";
+                font-size: rem(20px);
+                color: #1566c1;
+                padding-right: rem(10px);
+                vertical-align: text-bottom;
+            }
+        }
+    }
+    .all-link {
+        @include span(full);
+        margin-top: rem(20px);
+        .location {
+            padding: rem(20px) rem(20px) rem(14px) rem(20px);
+            border: 1px solid #ddd;
+            margin-bottom: rem(20px);
+            background: #fff;
+            .link {
+                line-height: rem(24px);
+                letter-spacing: -0.03em;
+                &.check {
+                    &:before {
+                        content: "\f00c";
+                        color: #e51d68;
+                    }
+                }
+                &:before {
+                    content: "\f0c1";
+                    font-family: "FontAwesome";
+                    font-size: rem(10px);
+                    color: #ccc;
+                    padding-right: rem(5px);
+                    vertical-align: top;
+                }
+                a {
+                    color: #333;
+                    display: inline-block;
+                    > span {
+                        display: inline-block;
+                        color: #e51d68;
+                        margin-left: 4px;
+                        margin-bottom: 0;
+                    }
+                }
+                span {
+                    font-size: rem(12px);
+                    color: #aaa;
+                    letter-spacing: 0.05em;
+                    display: block;
+                    margin-left: 20px;
+                    margin-bottom: 6px;
+                    &:before {
+                        content: "(";
+                    }
+                    &:after {
+                        content: ")";
+                    }
+                }
+            }
+        }
+    }
+}

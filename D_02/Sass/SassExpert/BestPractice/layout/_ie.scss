@@ -1,0 +1,24 @@
+// =======================================
+// IE 9 only 지원
+// =======================================
+@media screen and (min-width:0\0) and (min-resolution: .001dpcm) {
+    .test {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block !important;
+        // Class width 값 제어 Percent 반복문
+        $percent: 100;
+        @for $i from 1 through $percent {
+            &.w#{$i} {
+                width: $i + %;
+            }
+        }
+    }
+}
+
+// =======================================
+// IE10 and IE11 지원
+// =======================================
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+}

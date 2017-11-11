@@ -1,0 +1,14 @@
+@mixin placehoder($phc) {
+    &::-webkit-input-placeholder {
+        color: $phc;
+    }
+    &::-moz-placeholder {
+        color: $phc;
+    }
+    &:-ms-input-placeholder {
+        color: $phc !important;
+    }
+    &:-moz-placeholder {
+        color: $phc;
+    }
+}

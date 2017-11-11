@@ -1,0 +1,31 @@
+// =======================================
+// Typography
+// =======================================
+
+// Heading Retina Design Font Size 설정
+$h2-fz: 28px;
+$h3-fz: 24px;
+$h4-fz: 18px;
+$h5-fz: 22px;
+$h6-fz: 16px;
+
+h2, h3, h4 {
+	font-weight: bold;
+}
+
+// 제목 폰트 사이즈, 행간 비율 (px, rem)
+h2 {
+    @include psd-fz($h2-fz);
+}
+h3 {
+    @include psd-fz($h3-fz);
+}
+h4 {
+    @include psd-fz($h4-fz);
+}
+h5 {
+    @include psd-fz($h5-fz);
+}
+h6 {
+    @include psd-fz($h6-fz);
+}

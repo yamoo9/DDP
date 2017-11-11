@@ -1,0 +1,30 @@
+@mixin hexagon($wh: 100px, $bdrs: 8px, $bg: #eaeaea) {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: $wh;
+    height: $wh;
+    .hexagon {
+        display: inline-block;
+        height: 100%;
+        width: calc(100% * 0.57735);
+        border-radius: #{$bdrs} / #{$bdrs/2};
+        background-color: $bg;
+        &:before, &:after {
+            position: absolute;
+            top: 0;
+            right: calc((100% / 2) - ((100% * 0.57735) / 2));
+            height: inherit;
+            width: inherit;
+            border-radius: #{$bdrs} / #{$bdrs/2};
+            background-color: inherit;
+            content: "";
+        }
+        &:before {
+            transform: rotateZ(60deg);
+        }
+        &:after {
+            transform: rotateZ(-60deg);
+        }
+    }
+}

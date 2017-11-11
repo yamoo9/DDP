@@ -1,0 +1,29 @@
+@mixin input-type ($w: 242px, $h: 30px, $p: 0 10px, $bdc: #dbdbdb, $bg: #fff) {
+    min-width: $w;
+    input {
+        width: $w;
+        height: $h;
+        line-height: $h;
+        padding: $p;
+        border: 1px solid $bdc;
+        background: $bg;
+        &:focus {
+            border: 1px solid #002847;
+        }
+        &:focus::-webkit-input-placeholder {
+          color:transparent;
+        }
+        &:focus:-moz-placeholder {
+          color:transparent;
+        }
+        &:focus::-moz-placeholder {
+          color:transparent;
+        }
+        &:focus:-ms-input-placeholder {
+          color:transparent;
+        }
+    }
+    label {
+        line-height: $h;
+    }
+}

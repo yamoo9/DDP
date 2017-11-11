@@ -1,0 +1,8 @@
+// 행간 간격 설정
+@mixin psd-mb ($psd-fz, $position: bottom) {
+  $fz: retina($psd-fz);
+  $lh: $fz * $line-height;
+  $round-px: round( de-unit($lh) ) * 1px;
+  margin-#{$position}: $round-px;
+  margin-#{$position}: rem($round-px);
+}

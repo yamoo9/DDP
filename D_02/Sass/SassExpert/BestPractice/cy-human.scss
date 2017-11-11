@@ -1,0 +1,657 @@
+// =======================================
+// Function
+// =======================================
+@import "function/de-unit";
+@import "function/retina";
+@import "function/px-rem";
+@import "function/percent";
+
+// =======================================
+// Mixin
+// =======================================
+@import "mixin/align";
+@import "mixin/ellipsis";
+@import "mixin/placehoder";
+@import "mixin/fa-icon";
+@import "mixin/psd-fz";
+@import "mixin/psd-lh";
+@import "mixin/psd-mb";
+@import "mixin/heading";
+@import "mixin/retina-img";
+@import "mixin/tabs";
+@import "mixin/progress";
+@import "mixin/input-type";
+@import "mixin/select-box";
+@import "mixin/arrow";
+@import "mixin/gallery";
+@import "mixin/hexagon";
+
+// =======================================
+// Placeholder
+// =======================================
+@import "placeholder/clearfix";
+@import "placeholder/row";
+@import "placeholder/box-hidden";
+@import "placeholder/text-hidden";
+
+/* =======================================*/
+/* CSS reset
+/* =======================================*/
+caption {
+	visibility: hidden;
+	position: absolute;
+	top: -9999px;
+}
+textarea {
+    resize: none;
+}
+label {
+    cursor: pointer;
+}
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+th, td {
+    border-collapse: collapse;
+}
+label[for="cy-number"] {
+    position: relative;
+    span {
+        line-height: 25px;
+    }
+     &:before, &:after {
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 10px;
+        line-height: 10px;
+        background-color: #fff;
+        right: 1px;
+        z-index: 2;
+        font-size: 50%;
+        text-align: center;
+        pointer-events: none;
+    }
+    &:before {
+        content: "▲";
+        top: 2px;
+    }
+    &:after {
+        content: "▼";
+        top: 12px;
+    }
+}
+
+/* =======================================*/
+/* Common Style
+/* =======================================*/
+.clearfix {
+    @extend %clearfix;
+}
+.cy-content-box {
+	height: calc(100% - 80px);
+	min-height: 500px;
+}
+.cy-paging {
+    margin-top: 10px;
+    text-align: center;
+    * {
+        vertical-align:text-bottom;
+    }
+    button {
+        cursor: pointer;
+        margin: 0 2px;
+    }
+}
+/* Input Style */
+.cy-w100p {
+    width: 100%;
+}
+/* Button Type */
+.cy-btn-gray {
+    min-width: 52px;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    padding: 0 10px;
+    border-radius: 3px;
+    background: #394a57;
+}
+.cy-btn-lightgrey {
+    min-width: 52px;
+    height: 25px;
+    line-height: 25px;
+    color: #394a57;
+    padding: 0 10px;
+    border-radius: 3px;
+    background: #c5d2db;
+}
+.cy-base-table {
+    @extend .cy-section-table;
+    th {
+        background: #f5f8fa;
+        border-right: 1px solid #d3dbe0;
+    }
+    td {
+        line-height: 1.6;
+        label {
+            margin-left: 4px;
+            margin-right: 20px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+/* =======================================*/
+/* Popup Style
+/* =======================================*/
+/* 팝업 컨테이너 */
+.popup-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    /* 팝업 영역 */
+    .popup {
+        width: 900px;
+        min-height: 460px;
+        max-height: 700px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        outline: 0; 
+        z-index: 10000;
+        @include wh-center($position: absolute);
+        @extend %clearfix;
+        /* 팝업 헤드라인 */
+        .popup-headline {
+            height: 54px;
+            line-height: 54px;
+            padding: 0 30px;
+            background: #1f303d;
+            @extend %clearfix;
+            h4 {
+                float: left;
+                font-size: 22px;
+                font-weight: bold;
+                color: #fff;
+                letter-spacing: -0.04em;
+            }
+            .popup-close {
+                position: relative;
+                float: right;
+                width: 21px;
+                height: 21px;
+                margin-top: 17px;
+                text-indent: -9999px;
+                &:before {
+                    position: absolute;
+                    top: 10px;
+                    left: -4px;
+                    display: block;
+                    width: 135%;
+                    height: 1px;
+                    background: #fff;
+                    transform: rotate(45deg);
+                    content: "";
+                }
+                &:after {
+                    position: absolute;
+                    top: 10px;
+                    left: -4px;
+                    display: block;
+                    width: 135%;
+                    height: 1px;
+                    background: #fff;
+                    transform: rotate(-45deg);
+                    content: "";
+                }
+            }
+        }
+        /* 팝업 콘텐츠 */
+        .popup-content {
+            padding: 30px;
+            max-height: calc(700px - 54px);
+            overflow-y: auto;
+            background: #e1effa;
+        }
+    }
+}
+// width 760px 이하 브라우저 적용
+@media only screen and (max-width: 900px) {
+    .popup-container {
+        .popup {
+            top: 0 !important;
+            left: 0 !important;
+            right: 0;
+            bottom: 0;
+            width: 100% !important;
+            max-height: 100vh !important;
+            transform: inherit !important;
+            .popup-content {
+                max-height: calc(100% - 54px) !important;
+                padding: 20px !important;
+            }
+            
+        }
+    }
+}
+// height 700px 이하 브라우저 적용
+@media only screen and (max-height: 700px) {
+    .popup {
+        max-height: 100vh !important;
+        .popup-content {
+            max-height: calc(100% - 54px) !important;
+        }
+    }
+}
+
+/* =======================================*/
+/* 설문조사
+/* =======================================*/
+
+/* 타이틀, 메인버튼 영역 */
+.cy-date {
+	position: relative;
+	display: inline-block;
+}
+.cy-date input {
+	width: 90px;
+}
+.cy-date input:first-child {
+	margin-right: 15px;
+}
+.cy-date:before {
+	position: absolute;
+    content: "~";
+    top: 1px;
+    left: 50%;
+    margin-left: -4px;
+}
+
+/* 조회조건 */
+.cy-srcForm div:first-child {
+	float: left;
+	width: 50%;
+}
+.cy-srcForm div:nth-child(2) {
+	float: right;
+	width: 50%;
+}
+.cy-srcForm ul li:nth-child(2) {
+	display: inline-block;
+	float: left;
+}
+.cy-srcForm {
+	border-bottom: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #cdcdcd;
+    background: #f3f3f3;
+    *zoom: 1;
+}
+.cy-srcForm ul li {
+	display: block;
+	margin-bottom: 8px;
+	clear: both;
+}
+.cy-srcForm ul li:last-child{
+	margin-bottom: 0;
+}
+.cy-srcForm ul li:last-child input{
+	width: 482px;
+}
+.cy-srcForm ul li h4 {
+	display: inline-block;
+	font-weight: bold;
+	vertical-align: -1px;
+	width: 40px;
+}
+.cy-srcForm ul li [type="radio"] + label {
+	margin-right: 30px;
+}
+.cy-srcForm button{
+	background-color: #394a57;
+	color: #fff;
+	border: 0;
+	padding: 0 14px 2px 13px;
+}
+.cy-hr{
+	height: 1px;
+    background: #b8ccdb;
+    font-size: 0;
+    border: 0;
+    margin: 10px;
+}
+
+/* 조회결과 */
+.cy-srcBtn {
+	line-height: 28px;
+	margin-bottom: 5px;
+}
+.cy-srcBtn div:first-child {
+	margin-left: 10px;
+}
+.cy-srcBtn div:first-child,
+.cy-srcBtn div:nth-child(2) {
+	display: inline-block;
+}
+.cy-srcBtn div:nth-child(2) {
+	float: right;
+    margin-right: 10px;
+}
+.cy-srcBtn button {
+	background-color: #1a5380;
+	color: #fff;
+	padding: 0 15px 2px 15px;
+	border-radius: 3px;
+	height: 28px;
+}
+.cy-srcBtn strong {
+	padding-bottom: 4px;
+}
+
+/* 조회결과 [시트정보] */
+.cy-table {
+    padding-left: 10px;
+    padding-right: 10px;
+    table {
+        border: 1px solid #999fa3;
+        td {
+            height: 22px;
+        }
+        tbody {
+            td {
+                text-align: center;
+            }
+            tr {
+                &:last-child {
+                    td {
+                        border-bottom: 0;
+                    }
+                }
+                td {
+                    border-right: 1px solid #d3dbe0;
+                    border-bottom: 1px solid #d3dbe0;
+                    line-height: 0;
+                    padding: 2px 0 1px;
+                    &:last-child {
+                        border-right: 0;
+                    }
+                }
+            }
+        }
+        thead {
+            tr {
+                th {
+                    border-right: 1px solid #d3dbe0;
+                    font-weight: bold;
+                    padding-bottom: 1px;
+                    &:last-child {
+                        border-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    thead {
+        th {
+            background-color: #b8c3cc;
+            height: 30px;
+        }
+    }
+}
+
+/* =======================================*/
+/* 설문조사 팝업
+/* =======================================*/
+.cy-section-area {
+    position: relative;
+    padding-right: 145px !important;
+    .cy-section-btn-add {
+        position: absolute;
+        top: 152px;
+        right: 30px;
+        button[type="button"] {
+            display: block;
+            width: 100px;
+            height: 42px;
+            line-height: 42px;
+            text-align: center;
+            color: #fff;
+            background: #0875c8;
+            border-radius: 4px;
+            margin-bottom: 2px;
+        }
+    }
+}
+.cy-section-table {
+    letter-spacing: -0.04em;
+    margin-top: 10px;
+    border:1px solid #8ec5f4;
+    background: #fff;
+    &:first-child {
+        margin-top: 0;
+    }
+    table {
+        tr {
+            &:first-child {
+                th, td {
+                    border-top: 0;
+                }
+            }
+        }
+        th {
+            text-align: left;
+            &:first-child {
+                border-left: 0;
+            }
+        }
+        td {
+            height: 36px;
+            textarea {
+                border: 1px solid #b4bfc8;
+                overflow-y: scroll;
+            }
+        }
+        th, td {
+            padding: 6px 20px;
+            border-top:1px solid #c5e2f3;
+            border-left:1px solid #c5e2f3;
+            box-sizing: border-box;
+        }
+    }
+}
+.cy-section-box {
+    letter-spacing: -0.04em;
+    border:1px solid #8ec5f4;
+    background: #fff;
+    padding: 10px 20px;
+    margin-top: 10px;
+    &.cy-view {
+        border: 1px solid #b4bfc8;
+        padding-top: 20px;
+    }
+    textarea {
+        border: 1px solid #b4bfc8;
+        overflow-y: scroll;
+    }
+}
+.cy-section-box {
+    .cy-title {
+        position: relative;
+        width: 100%;
+        @extend %clearfix;
+        h5 {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            span {
+                font-weight: normal;
+            }
+        }
+        .cy-btn-set {
+            position: absolute;
+            top: -4px;
+            right: 0;
+            display: inline-block;
+            input[type="number"] {
+                width: 60px;
+                [pseudo="-webkit-inner-spin-button"] {
+                    display: block;
+                }
+            }
+            select {
+                width: 140px;
+            }
+        }
+    }
+}
+.cy-section-box {
+    .cy-item-add {
+        margin-top: 6px;
+        @extend %clearfix;
+        .cy-ex-txt {
+            float: left;
+            width: calc(100% - 113px);
+        }
+        .cy-ex-btn {
+            float: right;
+            .cy-btn-lightgrey {
+                min-width: 25px;
+                height: 25px;
+                padding: 0;
+                text-indent: -9999px;
+                &:first-child {
+                    text-indent: inherit;
+                    padding: 0 10px;
+                }
+                &.add {
+                    position: relative;
+                    &:before, &:after {
+                        position: absolute;
+                        background: #394a57;
+                        content: "";
+                    }
+                    &:before {
+                        top: 11px;
+                        right: 5px;
+                        width: 14px;
+                        height: 2px;
+                    }
+                    &:after {
+                        top: 5px;
+                        right: 11px;
+                        width: 2px;
+                        height: 14px;
+                    }
+                }
+                &.remove {
+                    position: relative;
+                    &:before, &:after {
+                        position: absolute;
+                        content: "";
+                        border-radius: 2px;
+                        background: #394a57;
+                        transform: rotate(45deg);
+                    }
+                    &:before {
+                        top: 11px;
+                        right: 5px;
+                        width: 14px;
+                        height: 2px;
+                    }
+                    &:after {
+                        top: 5px;
+                        right: 11px;
+                        width: 2px;
+                        height: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+.cy-section-box {
+    .cy-item-add {
+        .cy-keyword-txt {
+            position: relative;
+            float: left;
+            width: calc(100% - 162px);
+            input {
+                width: calc(50% - 10px);
+                margin-right: 20px;
+                &:last-child {
+                    float: left;
+                }
+                &:last-child {
+                    float: right;
+                    margin-right: 0;
+                }
+            }
+            &:before {
+                @include w-center ($position: absolute, $w-percent: 50%);
+                top: 2px;
+                display: inline-block;
+                content: "~";
+            }
+        }
+        .cy-keyword-num {
+            float: right;
+        }
+    }
+}
+.cy-section-box {
+    .cy-check-list {
+        li {
+            padding: 4px 0;
+            input[type="text"] {
+                min-width: 50%;
+                max-width: 580px;
+                margin-left: 4px;
+            }
+        }
+    }
+}
+.cy-increase-box {
+    display: inline-block;
+    margin: 10px 0;
+    [class$="-keyword"] {
+        margin-top: 20px;
+    }
+    .cy-check-list {
+        display: inline-block;
+        li {
+            display: inline-block;
+            width: 70px;
+            text-align: center;
+            label {
+                display: block;
+            }
+            &:first-child {
+                margin-left: 25px;
+            }
+            &:last-child {
+                margin-right: 25px;
+            }
+        }
+    }
+}
+.cy-check-grid {
+    margin: 10px 0;
+    width: auto;
+    tr, td {
+        text-align: center;
+        line-height: 28px;
+    }
+    tbody {
+        th {
+            text-align: left;
+        }
+    }
+}

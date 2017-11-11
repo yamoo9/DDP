@@ -1,0 +1,137 @@
+/* 팝업 컨테이너 */
+.popup-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    /* 팝업 딤 (Dim) */
+    .popup-dim {
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* 팝업 영역 */
+.popup {
+    width: 870px;
+    min-height: 460px;
+    max-height: 700px;
+    background: #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    outline: 0; 
+    z-index: 10000;
+    &.is-center {
+        @include wh-center($position: absolute);
+    }
+    /* 팝업 헤드라인 */
+    .popup-headline {
+        height: 50px;
+        line-height: 50px;
+        padding: 0 30px;
+        background: url($popup-title) center no-repeat;
+        @extend %clearfix;
+        h4 {
+            float: left;
+            font-size: 18px;
+            color: #fff;
+            letter-spacing: -0.04em;
+        }
+        .popup-close {
+            position: relative;
+            float: right;
+            width: 21px;
+            height: 21px;
+            margin-top: 15px;
+            text-indent: -9999px;
+            &:before {
+                position: absolute;
+                top: 10px;
+                left: -4px;
+                display: block;
+                width: 135%;
+                height: 1px;
+                background: #fff;
+                transform: rotate(45deg);
+                content: "";
+            }
+            &:after {
+                position: absolute;
+                top: 10px;
+                left: -4px;
+                display: block;
+                width: 135%;
+                height: 1px;
+                background: #fff;
+                transform: rotate(-45deg);
+                content: "";
+            }
+        }
+    }
+    /* 팝업 콘텐츠 */
+    .popup-content {
+        padding: 20px 30px 0 30px;
+        max-height: calc(650px - 50px);
+        overflow: auto;
+        @extend %clearfix;
+        [class$="l-set"] {
+            text-align: left;
+        }
+        [class$="r-set"] {
+            text-align: right;
+        }
+        .btn-tl-set, .btn-tr-set {
+            margin-bottom: 10px;
+        }
+        .btn-cl-set, .btn-cr-set {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .popup-btn-set {
+            width: 100%;
+            text-align: center;
+            padding: 30px;
+            .popup-save {
+                @extend %btn-type-1-03;
+            }
+            .popup-close {
+                @extend %btn-type-1-01;
+            }
+            button {
+                width: 104px;
+                margin-right: 1px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+// height 700px 이하 브라우저 적용
+@media only screen and (max-height: 700px) {
+    .popup {
+        max-height: 100vh;
+        .popup-content {
+            max-height: calc(100% - 50px);
+        }
+    }
+}
+// width 760px 이하 브라우저 적용
+@media only screen and (max-width: 760px) {
+    .popup {
+        &.mobile {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            max-height: 100vh;
+            transform: inherit;
+            .popup-content {
+                max-height: calc(100% - 50px);
+                padding: 20px;
+            }
+        }
+    }
+}

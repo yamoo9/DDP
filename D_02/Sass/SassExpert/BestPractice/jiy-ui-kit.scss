@@ -1,0 +1,367 @@
+/*! style.css v1.0.0 © inyoung524@naver.com */
+
+// =======================================
+// UI Kit 플러그인
+// =======================================
+@charset "utf-8";
+
+// =======================================
+// UI Kit 플러그인
+// =======================================
+@import "jiy-style";
+
+// =======================================
+// UI Kit 가이드 스타일
+// =======================================
+.ui-kit {
+    background: #f3f3f3;
+    overflow: hidden;
+    h1 {
+        font-size: 40px;
+        color: #002847;
+        letter-spacing: -0.03em;
+        padding: 20px 0 10px 0;
+        margin-bottom: 10px;
+        .fa {
+            font-size: 30px;
+            vertical-align: 4px;
+        }
+    }
+    section {
+        > article {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e2e2;
+            h2 {
+                color: #002847;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #e2e2e2;
+            }
+        }
+    }
+}
+
+// =======================================
+// 마크업 스킨 다운 스타일
+// =======================================
+.ui-kit {
+    code[class*="language-"], pre[class*="language-"] {
+        font-family: $font-family;
+        color: inherit;
+        background: none;
+        text-align: left;
+        white-space: pre-wrap;
+        line-height: 1.5;
+        -moz-tab-size: 4;
+        -o-tab-size: 4;
+        tab-size: 4;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+        &::-moz-selection, ::-moz-selection {
+            text-shadow: none;
+        }
+        .toolbar {
+            .toolbar-item {
+                &:first-child {
+                    position: absolute;
+                    top: 22px;
+                    left: 30px;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color: #002847;
+                    text-transform: uppercase
+                }
+                &:last-child {
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    a {
+                        @extend .btn-type-1-03;
+                        line-height: 26px;;
+                    }
+                }
+            }
+        }
+    }
+    code[class*="language-"] {
+        &::-moz-selection, ::-moz-selection {
+            text-shadow: none;
+        }
+        &::selection, ::selection {
+            text-shadow: none;
+        }
+        &::selection, ::selection {
+            text-shadow: none;
+        }
+    }
+    pre[class*="language-"] {
+        position: relative;
+        padding: 70px 30px 30px 30px;
+        margin-top: 30px;
+        border-radius: 10px;
+        background: #eff4f7;
+        overflow: auto;
+    }
+    :not(pre) > code[class*="language-"] {
+        padding: .1em;
+        border-radius: .3em;
+        white-space: normal;
+    }
+    .token {
+        &.comment, &.prolog, &.doctype, &.cdata {
+            color: slategray;
+        }
+        &.punctuation {
+            color: #999;
+        }
+        &.property, &.tag, &.boolean, &.number, &.constant, &.symbol, &.deleted {
+            color: #905;
+        }
+        &.selector, &.attr-name, &.string, &.char, &.builtin, &.inserted {
+            color: #690;
+        }
+        &.operator, &.entity, &.url {
+            color: #a67f59;
+        }
+        &.atrule, &.attr-value, &.keyword {
+            color: #07a;
+        }
+        &.function {
+            color: #DD4A68;
+        }
+        &.regex, &.important, &.variable {
+            color: #e90;
+        }
+        &.important, &.bold {
+            font-weight: bold;
+        }
+        &.italic {
+            font-style: italic;
+        }
+        &.entity {
+            cursor: help;
+        }
+    }
+    .language-css .token.string, .style .token.string {
+        color: #a67f59;
+    }
+    .namespace {
+        opacity: .7;
+    }
+}
+.ui-kit-comment {
+    padding: 15px;
+    border: 10px solid #eff4f7;
+    margin-top: -10px;
+}
+
+// =======================================
+// 버튼 스타일
+// =======================================
+.btn-type-sample {
+    p {
+        font-size: 12px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    button {
+        margin-top: 30px;
+        margin-right: 10px;
+        &:first-child {
+            margin-top: 10px;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+// =======================================
+// Porgress 스타일
+// =======================================
+.porgress-area-test {
+    h3 {
+        font-size: 20px;
+        color: #69c;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        .fa {
+            font-size: 16px;
+            margin-right: 10px;
+            vertical-align: 2px;
+        }
+    }
+    .step-area {
+        width: 930px;
+    }
+}
+
+// =======================================
+// 화살표 스타일
+// =======================================
+.arrow-box {
+    [class^="arrow-"] {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
+
+// =======================================
+// 아코디언 스타일
+// =======================================
+.accordion-test {
+    h3 {
+        font-size: 20px;
+        color: #69c;
+        margin-bottom: 10px;
+        .fa {
+            font-size: 16px;
+            margin-right: 10px;
+            vertical-align: 2px;
+        }
+    }
+    .aco-base {
+        margin-bottom: 20px;
+        // class 추가 후 디자인에 맞춰 스타일 설정
+        // 아키디언 기본 구조 sass/layout/_common.scss파일 "아코디언 스타일" 참조
+        @extend .accordion-lnb;
+    }
+    .aco-open {
+        @extend .accordion-faq;
+    }
+}
+
+// =======================================
+// h3 제목 스타일
+// =======================================
+.form-group {
+    h3 {
+        font-size: 20px;
+        color: #69c;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        &:first-child {
+            margin-top: 0;
+        }
+        .fa {
+            font-size: 16px;
+            margin-right: 6px;
+            vertical-align: 2px;
+        }
+    }
+}
+.search-type-area {
+    @extend .form-group;
+}
+.select-box-group {
+    @extend .form-group;
+}
+.file-area-test {
+    @extend .form-group;
+}
+.all-pages-view-area {
+    @extend .form-group;
+}
+
+// =======================================
+// 탭 스타일
+// =======================================
+.tablist {
+    width: 100%;
+}
+
+// =======================================
+// 테이블 스타일
+// =======================================
+.table-type {
+    @extend .form-group;
+    h2 {
+        margin-top: 20px;
+    }
+    h3 {
+        .fa {
+            margin-right: 10px;
+            vertical-align: -1px;
+        }
+    }
+}
+.table-type-01 {
+    thead {
+        th {
+            &:first-child {
+                width: 70px;
+            }
+            &:nth-child(2) {
+                width: 200px;
+            }
+            &:nth-child(4), &:nth-child(5) {
+                width: 140px;
+            }
+            &:last-child {
+                width: 140px;
+            }
+        }
+    }
+    tbody {
+        td {
+            &:first-child {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            &:nth-child(3) {
+                text-align: left;
+            }
+        }
+    }
+}
+.table-type-02 {
+    colgroup {
+        col {
+            &:nth-child(1), &:nth-child(3) {
+                width: 140px;
+            }
+        }
+    }
+}
+.table-li {
+    .title {
+        width: 140px;
+    }
+}
+.table-dl {
+    dt {
+        width: 140px;
+    }
+}
+.content-form-area {
+    margin-top: 30px;
+}
+
+/* =======================================*/
+/* 육각형 스타일
+/* =======================================*/
+.hexagon-wrap {
+    margin: 20px;
+    &:nth-of-type(1) {
+        @include hexagon;
+    }
+    &:nth-of-type(2) {
+        @include hexagon($bg: #f36f57);
+    }
+    &:nth-of-type(3) {
+        @include hexagon($bg: #e7b91c);
+    }
+    &:nth-of-type(4) {
+        @include hexagon($bg: #b8d841);
+    }
+    .text-area {
+        @include wh-center ($position: absolute, $h-percent: 50%, $w-percent: 50%);
+    }
+}

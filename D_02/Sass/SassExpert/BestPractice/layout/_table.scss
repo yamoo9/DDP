@@ -1,0 +1,314 @@
+/* =======================================*/
+/* 테이블 스타일
+/* =======================================*/
+/* 컨텐츠 테이블 내부 다운로드 아이콘 */
+[class^="table-type-"] {
+    .table-download {
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        [class^="icon-"] {
+            display: inline-block;
+            width: 14px;
+            height: 16px;
+            padding-left: 0;
+            margin: 0 3px;
+            vertical-align: -2px;
+            &:before {
+                top: 0;
+            }
+        }
+        /* 말풍선 다운로드 위젯 적용 */
+        .download-file {
+            @include w-center ($position: absolute);
+            top: 43px;
+            width: 250px;
+            text-align: left;
+            margin-left: -5px;
+            letter-spacing: -0.03em;
+            padding: 16px 20px;
+            border: 1px solid #8aa3b7;
+            background: #fff;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            visibility: hidden;
+            z-index: 9999;
+            &:after {
+                @include w-center ($position: absolute);
+                top: -5px;
+                width: 8px;
+                height: 8px;
+                border: 1px solid #8aa3b7;
+                border-bottom: 0;
+                border-right: 0;
+                background: #fff;
+                transform: rotate(45deg);
+                content: "";
+            }
+            &:before {
+                display: inline-block;
+                position: absolute;
+                top: -43px;
+                left: 0;
+                right: 0;
+                height: 43px;
+                content: "";
+            }
+            strong {
+                display: block;
+                margin-bottom: 6px;
+            }
+            a {
+                display: block;
+                position: relative;
+                padding-left: 10px;
+                padding-bottom: 6px;
+                &:focus, &:hover {
+                    color: #002847;
+                    text-decoration: underline;
+                }
+                &:last-child {
+                    padding-bottom: 0;
+                }
+                &:after {
+                    display: inline-block;
+                    position: absolute;
+                    top: -3px;
+                    left: 0;
+                    content: "-";
+                }
+            }
+            .btn-download-close {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                width: 20px;
+                height: 20px;
+                text-indent: -9999px;
+                &:before {
+                    position: absolute;
+                    top: 9px;
+                    left: 0;
+                    display: block;
+                    width: 20px;
+                    height: 1px;
+                    background: #8aa3b7;
+                    transform: rotate(45deg);
+                    content: "";
+                }
+                &:after {
+                    position: absolute;
+                    top: 9px;
+                    left: 0;
+                    display: block;
+                    width: 20px;
+                    height: 1px;
+                    background: #8aa3b7;
+                    transform: rotate(-45deg);
+                    content: "";
+                }
+            }
+        }
+        &:focus, &.show-widget {
+            .download-file {
+                visibility: inherit;
+            }
+        }
+    }
+}
+/* Content List Table */
+.table-type-01 {
+    width: 100%;
+    thead {
+        border-top: 2px solid #45494d;
+        th {
+            border-right: 1px solid #d1d1d1;
+            border-bottom: 1px solid #c2c2c2;
+            background: #f0f3f5;
+        }
+    }
+    tbody {
+        th, td {
+            border-right: 1px solid #d1d1d1;
+            border-bottom: 1px solid #d1d1d1;
+        }
+        td {
+            p {
+                margin-bottom: 4px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    tr {
+        th {
+            color: #2e3a42;
+            &.sub-title {
+                font-weight: normal;
+            }
+        }
+        th, td {
+            height: 38px;
+            text-align: center;
+            padding: 8px 10px;
+            /* 제목 - 팝업 링크 */
+            .view-link {
+                @include ellipsis(1);
+                &:focus, &:hover {
+                    color: #002847;
+                    text-decoration: underline;
+                }
+            }
+            /* 제목 - 전체 조회수 */
+            .total-number {
+                color: #003761;
+                font-weight: bold;
+                margin-left: 4px;
+                text-decoration: none;
+            }
+            &:last-child {
+                border-right: 0;
+            }
+        }
+    }
+}
+/* Popup List Table */
+.table-type-02 {
+    width: 100%;
+    tr {
+        th, td {
+            height: 42px;
+            text-align: left;
+            border: 1px solid #d1d1d1;
+            .view-link {
+                @include ellipsis(1);
+            }
+        }
+        th {
+            background: #f0f3f5;
+            color: #2e3a42;
+            padding: 0 20px;
+            &.sub-title {
+                font-weight: normal;
+            }
+            .necessary {
+                display: inline-block;
+                margin-left: 6px;
+                span {
+                    position: absolute;
+                    top: -9999px;
+                    visibility: hidden;
+                }
+                &:after {
+                    @include fa($fa-icon: "\f005", $fz: 10px, $color: #b80000);
+                    vertical-align: text-bottom;
+                }
+            }
+        }
+        td {
+            padding: 6px 10px;
+            .photo-add {
+                float: left;
+            }
+            .photo-view {
+                float: right;
+                bottom: 6px;
+                width: 100px;
+                height: 107px;
+                vertical-align: top;
+                border: 1px solid #d1d1d1;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+/* ul, li 테이블 형태 */
+.table-li {
+    display: table;
+    width: 100%;
+    li {
+        display: table-cell;
+        vertical-align: middle;
+        min-height: 42px;
+        padding: 10px;
+        border: 1px solid #d1d1d1;
+        border-right: 0;
+        &.title {
+            font-weight: bold;
+            color: #2e3a42;
+            background: #f0f3f5;
+            height: 42px;
+            padding: 10px 20px;
+        }
+        &:last-child {
+            border-right: 1px solid #d1d1d1;
+        }
+    }
+}
+/* dl, dt, dd 테이블 형태 */
+.table-dl {
+    width: 100%;
+    display: table;
+    dt, dd {
+        display: table-cell;
+        height: 42px;
+        vertical-align: middle;
+        border: 1px solid #d1d1d1;
+    }
+    dt {
+        font-weight: bold;
+        color: #2e3a42;
+        padding: 10px 20px;
+        background: #f0f3f5;
+    }
+    dd {
+        padding: 10px;
+        border-left: 0;
+    }
+}
+.table-dt-dd {
+    width: 100%;
+    dt, dd {
+        border: 1px solid #d1d1d1;
+        border-bottom: 0;
+        &:last-child {
+            border-bottom: 1px solid #d1d1d1;
+        }
+    }
+    dt {
+        height: 42px;
+        line-height: 42px;
+        font-weight: bold;
+        text-align: center;
+        color: #2e3a42;
+        padding: 0 10px;
+        background: #f0f3f5;
+    }
+    dd {
+        padding: 10px;
+    }
+}
+/* 테이블 버튼 영역 */
+.table-btn-set {
+    margin-top: 30px;
+    text-align: center;
+    [class^="btn-"] {
+        margin-right: 3px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &[class*="in-"] {
+        margin-top: 10px;
+    }
+    &.in-left {
+        text-align: left;
+    }
+    &.in-right {
+        text-align: right;
+    }
+}

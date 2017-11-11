@@ -1,0 +1,56 @@
+// 버튼 타입 01
+%btn-type-1-size {
+    @include btn-size ($w: 66px, $h: 30px);
+}
+%btn-type-1-01 {
+    @extend %btn-type-1-size;
+    @include btn-type-1 ($color: #333);
+}
+%btn-type-1-02 {
+    @extend %btn-type-1-size;
+    @include btn-type-1 ($color: #fff, $bg: #394a57);
+}
+%btn-type-1-03 {
+    @extend %btn-type-1-size;
+    @include btn-type-1 ($color: #fff, $bg: #003761);
+}
+%btn-type-1-04 {
+    @extend %btn-type-1-size;
+    @include btn-type-1 ($color: #fff, $bg: #d14411);
+}
+// 버튼 타입 02
+%btn-type-2-size {
+    @include btn-size ($w: 200px, $h: 40px);
+}
+%btn-type-2-01 {
+    @extend %btn-type-2-size;
+    @include btn-type-2 ($color: #333, $bdb: #a9b4bc, $bg: #c5d2db);
+}
+%btn-type-2-02 {
+    @extend %btn-type-2-size;
+    @include btn-type-2 ($color: #333, $bdb: #6f7d87, $bg: #9fb3c2);
+}
+%btn-type-2-03 {
+    @extend %btn-type-2-size;
+    @include btn-type-2 ($color: #fff, $bdb: #28343d, $bg: #394a57);
+}
+%btn-type-2-04 {
+    @extend %btn-type-2-size;
+    @include btn-type-2 ($color: #fff, $bdb: #002644, $bg: #003761);
+}
+// 버튼 타입 01
+%btn-type-3-size {
+    @include btn-size ($w: 106px, $h: 34px);
+}
+%btn-type-3-01 {
+    @extend %btn-type-3-size;
+    @include btn-type-1 ($color: #333);
+}
+%btn-type-3-02 {
+    @extend %btn-type-3-size;
+    @include btn-type-1 ($color: #fff, $bg: #394a57);
+}
+%btn-type-3-03 {
+    @extend %btn-type-3-size;
+    @include btn-type-1 ($color: #fff, $bg: #003761);
+}

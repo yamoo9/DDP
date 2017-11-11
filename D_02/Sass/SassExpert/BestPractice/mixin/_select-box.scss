@@ -1,0 +1,42 @@
+@mixin select-box ($w: 150px, $h: 30px, $icon-top: -2px) {
+    position: relative;
+    width: $w;
+    height: $h;
+    &:before {
+        position: absolute;
+        top: $icon-top;
+        right: 10px;
+        font-family: 'FontAwesome';
+        content: "\f0dd";
+        font-size: 17px;
+        color: #343434;
+        pointer-events: none;
+    }
+    label {
+        position: absolute;
+        width: 100%;
+        height: $h;
+        color: transparent;
+        z-index: -1;
+    }
+    select {
+        width: 100%;
+        height: $h;
+        line-height: $h - 2;
+        padding: 0 10px;
+        border: 1px solid #dbdbdb;
+        background: #fff;
+        /* 기본 버튼 속성 무시*/
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        box-sizing: border-box;
+        &:focus {
+            border: 1px solid #002847;
+        }
+        &::-ms-expand {
+            display: none;
+        }
+    }
+}

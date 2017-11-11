@@ -1,0 +1,162 @@
+/* LNB 영역 */
+.lnb {
+    float: left;
+    width: 226px;
+    margin-bottom: 30px;
+    h3 {
+        display: block;
+        height: 100px;
+        line-height: 100px;
+        color: #fff;
+        text-align: center;
+        letter-spacing: -0.03em;
+        background: url($lnb_title) no-repeat;
+    }
+}
+.accordion-lnb {
+    border: 1px solid #cad7e0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    > li {
+        border-bottom: 1px solid #cad7e0;
+        font-size: 16px;
+        color: #333;
+        font-weight: bold;
+        [class*="link"] {
+            position: relative;
+            color: #4D4D4D;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 15px 20px;
+            border-bottom: 1px solid #CCC;
+            .fa-angle-down {
+                position: absolute;
+                display: block;
+                top: 18px;
+                right: 18px;
+                font-size: 18px;
+                color: #333;
+                transform: rotate(0deg);
+            }
+        }
+        &:last-child, [class*="link"] {
+            border-bottom: 0;
+            ul {
+                border-bottom-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+        }
+        &.open {
+            background: #cee4f5;
+            [class*="link"] {
+                position: relative;
+                color: #003761;
+                padding-left: 33px;
+                &:before {
+                    position: absolute;
+                    left: 20px;
+                    bottom: 16px;
+                    width: 6px;
+                    height: 2px;
+                    background: #003761;
+                    content: "";
+                }
+                .fa-angle-down {
+                    color: #003761;
+                    transform: rotate(180deg);
+                    transition: transform 0.25s ease;
+                }
+            }
+            &:last-child {
+                [class*="link"] {
+                    border-bottom-left-radius: 8px;
+                    border-bottom-right-radius: 8px;
+                }
+            }
+        }
+        &.selected {
+            background: #003761;
+            [class*="link"] {
+                position: relative;
+                color: #f0f8ff;
+                padding-left: 33px;
+                &:before {
+                    position: absolute;
+                    left: 20px;
+                    bottom: 16px;
+                    width: 6px;
+                    height: 2px;
+                    background: #f0f8ff;
+                    content: "";
+                }
+                .fa-angle-down {
+                    color: #f0f8ff;
+                    transform: rotate(180deg);
+                    transition: transform 0.25s ease;
+                }
+            }
+        }
+    }
+    [class*="sub"] {
+        background: #f0f8ff;
+        padding: 9px 0;
+        > li {
+            font-weight: normal;
+            padding: 9px 24px;
+            a {
+                position: relative;
+                display: block;
+                padding-left: 11px;
+                letter-spacing: -0.06em;
+                &:before {
+                    position: absolute;
+                    left: 0;
+                }
+                &:hover, &:focus {
+                    font-weight: bold;
+                    color: #003761;
+                    text-decoration: underline;
+                }
+                &.active {
+                    font-weight: bold;
+                    color: #003761;
+                    padding-left: 12px;
+                    &:before {
+                        @include fa($fa-icon: "\f054", $fz: 10px, $color: #003761);
+                        top: 5px;
+                        background: transparent;
+                    }
+                }
+            }
+            > a {
+                &:before {
+                    top: 11px;
+                    display: block;
+                    width: 3px;
+                    height: 3px;
+                    background: #757575;
+                    content: "";
+                }
+                &:hover, &:focus {
+                    &:before {
+                        background: #003761;
+                    }
+                }
+            }
+            > ul {
+                li {
+                    padding-top: 9px;
+                    padding-left: 10px;
+                    a {
+                        &:before {
+                            top: -3px;
+                            background: transparent;
+                            color: #757575;
+                            content: "-";
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

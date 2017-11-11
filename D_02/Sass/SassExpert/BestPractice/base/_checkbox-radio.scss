@@ -1,0 +1,100 @@
+// =======================================
+// 체크박스, 라디오 버튼 공통 타입
+// =======================================
+// Input Color 설정
+$input-checked: #002847;
+$input-focus: $input-checked;
+$input-border: #dbdbdb;
+$input-bg: #fff;
+$input-sz: 14px;
+.checkbox-type {
+  input {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    +label {
+      position: relative;
+      padding-left: (8 + $input-sz);
+      &:before {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        display: inline-block;
+        content: '';
+        text-align: center;
+        width: $input-sz;
+        height: $input-sz;
+        border: 1px solid $input-border;
+        background: $input-bg;
+      }
+    }
+    &:focus {
+      +label {
+        &:before {
+          outline: none;
+          border-color: $input-focus;
+        }
+      }
+    }
+    &:checked {
+      +label {
+        &:before {
+          color: $input-checked;
+          border-color: $input-focus;
+        }
+      }
+    }
+  }
+}
+
+.radio-type {
+  @extend .checkbox-type;
+}
+
+// =======================================
+// 체크박스 타입
+// =======================================
+.checkbox-type {
+  input[type="checkbox"] {
+    +label {
+      &:before {
+        font-size: 18px;
+        line-height: 1;
+        transition: all 0.1s ease;
+      }
+    }
+    &:checked {
+      +label {
+        &:before {
+          font-size: 13px;
+          line-height: 1.2;
+          font-family: 'FontAwesome';
+          content: "\f00c";
+        }
+      }
+    }
+  }
+}
+
+// =======================================
+// 라디오버튼 타입
+// =======================================
+.radio-type {
+  input[type="radio"] {
+    +label {
+      &:before {
+        border-radius: 100%;
+        transition: all 0.3s ease;
+      }
+    }
+    &:checked {
+      +label {
+        &:before {
+          background-color: $input-checked;
+          box-shadow: inset 0 0 0 3px $input-bg;
+        }
+      }
+    }
+  }
+}
+

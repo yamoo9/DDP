@@ -1,0 +1,4 @@
+// 퍼센트 계산
+@function percent($v){
+    @return (100%/$v);
+}
