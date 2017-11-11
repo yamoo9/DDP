@@ -10,9 +10,9 @@
 /* body text + paragraph */
 body {
   font-family: "Spoqa Han Sans", Dotum, sans-serif;
-  font-size: 14px;     /* Old Browsers */
-  font-size: 0.875rem; /* Modern Browsers */
-  line-height: 1.5;    /* %, em, rem */
+  font-size: 14px;          /* Old Browsers 대응 */
+  font-size: 0.875rem;      /* Modern Browsers */
+  line-height: 1.5;         /* %, em, rem 단위 사용하지 마세요 */
   letter-spacing: -0.064em; /* 1/1000em */
   letter-spacing: -1px;
   color: #222325;
@@ -28,5 +28,15 @@ p {
 }
 
 /* heading */
+h6 {
+  font-size: 15px; /* 15 * 1.27  */
+}
+
+h5 {
+  font-size: 15px; /* 15 * 1.27 * 1.27  */
+
+}
+
+
 
 /* list */
