@@ -1,15 +1,15 @@
 {
   "name": "local-test",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "live-server를 사용한 로컬 테스트 서버 구축",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "live-server"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "live-server": "^1.2.0"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "velocity-animate": "^1.5.0"
   }
 }

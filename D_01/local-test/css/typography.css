@@ -1,0 +1,32 @@
+/* 브라우저 기본 설정 값 */
+.body-default-font-setting {
+  font-size: 16px;
+  line-height: 120%; /* 1.2 */
+  letter-spacing: 0;
+  word-spacing: 0;
+  color: #000000;
+}
+
+/* body text + paragraph */
+body {
+  font-family: "Spoqa Han Sans", Dotum, sans-serif;
+  font-size: 14px;     /* Old Browsers */
+  font-size: 0.875rem; /* Modern Browsers */
+  line-height: 1.5;    /* %, em, rem */
+  letter-spacing: -0.064em; /* 1/1000em */
+  letter-spacing: -1px;
+  color: #222325;
+}
+
+body.show-leading {
+  background: linear-gradient(180deg, transparent 20px, #491fa4 20px);
+  background-size: 1px 21px;
+}
+
+p {
+  margin-top: 21px;
+}
+
+/* heading */
+
+/* list */
