@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>1200 그리드 시스템 활용</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/toggleGrid.js"></script>
+</head>
+<body>
+
+  <!-- 그리드 시스템 모듈
+       .container 컨테이너 1200px
+        .row 행
+          .col.is-6 컬럼 .col.is-6 컬럼
+        .row 행
+          .col.is-4 컬럼 .col.is-4 컬럼 .col.is-4 컬럼
+  -->
+
+  <script>
+    // 그리드 토글 함수 실행
+    // window.toggleGrid(container, className);
+    var container = 'body';
+    window.toggleGrid(container, 'show-grid');
+  </script>
+</body>
+</html>
