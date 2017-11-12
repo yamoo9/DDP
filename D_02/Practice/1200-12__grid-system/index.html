@@ -11,25 +11,35 @@
 </head>
 <body>
 
-  <!-- 그리드 시스템 모듈
-       .container 컨테이너 1200px
-        .row 행
-          .col.is-6 컬럼 .col.is-6 컬럼
-        .row 행
-          .col.is-4 컬럼 .col.is-4 컬럼 .col.is-4 컬럼
-  -->
-
-  <div class="container">
-    <div class="row">
-      <!-- 2 Columns -->
-      <div class="col is-6">column 1</div>
-      <div class="col is-3 is-o-3">column 2</div>
-    </div>
-    <div class="row">
-      <!-- 3 Columns -->
-      <div class="col is-4">column 1</div>
-      <div class="col is-4">column 2</div>
-      <div class="col is-4">column 3</div>
+  <div class="container show-grid">
+    <div class="row demo">
+      <div class="col is-6">
+        <!-- invalid -->
+        <img src="./assets/infographic-invalid.jpg" alt="">
+        <h2 class="h2 is-invalid headline">Desktop First 방식을 사용할 경우 문제점</h2>
+        <div class="content">
+          <p>
+            CSS 를 불러올때 브라우저는 첫번재 줄부터 마지막 줄까지 순차적으로 코드를 읽는다. 이때 Desktop First 방식을 사용할경우 모바일사용자는 Desktop 코드를 모두 읽고난 후에야 Mobile 코드를 읽어 화면에
+            출력하게 된다. 이럴경우 데이터를 사용하는 모바일 사용자는 데이터를 낭비하게 된다.
+          </p>
+          <p>
+            hover기능은 마우스를 올렸을때 작동하는 기능인데 Mobile에서는 마우스를 올린다는 개념이 없기 때문에 hover의 효과를 어떻게 대처해야하는지를 다시한번 고려해야한다.
+          </p>
+        </div>
+      </div>
+      <div class="col is-6">
+        <!-- valid -->
+        <img src="./assets/infographic-valid.jpg" alt="">
+        <h2 class="h2 is-valid headline">Desktop First 방식을 사용할 경우 좋은점</h2>
+        <div class="content">
+          <p>
+             사용자의 생활 패턴은 데스크탑에서 모바일로 이동한지 오래이다. 오늘날 대부분의 사용자는 일어나자마자 모바일을 사용한다. 즉, 데스크탑보다 먼저 모바일을 사용한다는 것이다.
+          </p>
+          <p>
+            그렇기에 디자인 또한 모바일 먼저 진행할 필요가 있다. 디자인의 수요층이 주로 사용하는 기기 중심의 디자인을 우선 수행했을 경우 ...
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 

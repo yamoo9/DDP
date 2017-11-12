@@ -93,6 +93,7 @@
 /* CSS3 Gradient Technique: Column Grid */
 .show-grid { position: relative; }
 .show-grid::before {
+  opacity: 0.4;
   content: '';
   position: absolute;
   top: 0;
