@@ -1,0 +1,57 @@
+// _sass_file.{scss,sass}
+// 호출 과정에서 _ , 확장자를 생략할 수 있다.
+
+// common modules
+@import "./modules/init";
+@import "./modules/typography";
+@import "./modules/grid-system";
+@import "./modules/utils";
+
+// page modules
+@import "./pages/header";
+
+// Define Mixin
+@mixin clearfix() {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+// @mixin size($w: null, $h: null) {
+//   width: $w;
+//   height: $h;
+// }
+@mixin size($dimention) {
+  // @debug type-of($dimention);
+  // @debug length($dimention);
+  @if type-of($dimention) == 'list' {
+    @if length($dimention) == 2 {
+      width: nth($dimention, 1);
+      height: nth($dimention, 2);
+    } @else {
+      width: nth($dimention, 1);
+    }
+  } @else {
+    width: $dimention;
+    height: $dimention;
+  }
+}
+
+
+nav.gnb ul {
+  @include clearfix();
+  @include size(1200px 920px);
+}
+
+footer.page-footer ul {
+  @include clearfix();
+  // @include size(420px, 420px);
+}
+
+.sidebar .content {
+  @include clearfix();
+  // @include size(810px, 20rem);
+
+}

@@ -1,25 +1,57 @@
-// Sass 변수
-$page-width: 1200px;
-$column-count: 12;
-$gutter-direction: 'split'; $gutter-width: 20px;
-$column-width: 100px;
-
-// 상태 변수
-$is-center-position: true;
-
-/* .container module */
-
-.container {
-  width: $page-width;
-  @if $is-center-position == true {
-    margin-left: auto;
-    margin-right: auto;
-  }
+@charset "UTF-8";
+html {
+  overflow-y: scroll;
 }
 
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+body {
+  /* 글자크기 14px, 행간비율 1.5배 */
+  font: 87.5%/1.5 "Spoqa Han Sans", Dotum, Sans-Serif;
+  /* 포토샵 트래킹 설정 값: -10 */
+  letter-spacing: -0.01em;
+  /* 글자 색상 */
+  color: #000;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 21px;
+  margin-bottom: 1.3125rem;
+  color: #717171;
+}
+
+h2, .h2 {
+  margin-top: 0;
+  margin-bottom: 21px;
+  margin-bottom: 1.3125rem;
+  line-height: 42px;
+  line-height: 2.625rem;
+  font-size: 32px;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+/**
+ * 그리드 시스템 설정 변수
+ * --------------------------
+ * page-width       : 1200px
+ * column-count     : 12
+ * gutter-direction : split
+ * gutter-width     : 20px (10px * 2)
+ * column-width     : 100px
+ */
+/* .container module */
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* .row module */
-
 .row::after,
 .clearfix::after {
   content: '';
@@ -27,24 +59,16 @@ $is-center-position: true;
   clear: both;
 }
 
-
 /* .col module */
-
 .col {
-  $half-gutter-width: $gutter-width / 2;
   float: left;
   width: 100%;
-  margin-left: $half-gutter-width;
-  margin-right: $half-gutter-width;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-
 /* .is-* module */
-
-
 /* 공식: width = column-width * count + gutter-wdith * (count - 1) */
-
-
 /*
   자바스크립트 함수
   function width(count, col_width, gutter_width) {
@@ -53,7 +77,6 @@ $is-center-position: true;
     return (col_width * count)+gutter_width * (count - 1);
   }
 */
-
 .col.is-1 {
   width: 100px;
 }
@@ -98,13 +121,10 @@ $is-center-position: true;
   width: 1080px;
 }
 
-
 /* offset module
    .is-offset-*
    .is-o-*
  */
-
-
 /*
   자바스크립트 함수
   function offset(count, col_width, gutter_width) {
@@ -113,7 +133,6 @@ $is-center-position: true;
     return (col_width * count) + (gutter_width * count) + gutter_width/2;
   }
 */
-
 .col.is-o-1,
 .col.is-offset-1 {
   margin-left: 110px;
@@ -169,12 +188,8 @@ $is-center-position: true;
   margin-left: 1110px;
 }
 
-
 /* .show-grid module */
-
-
 /* CSS3 Gradient Technique: Column Grid */
-
 .show-grid {
   position: relative;
 }
@@ -187,6 +202,45 @@ $is-center-position: true;
   left: 0;
   width: 100%;
   height: 200vh;
-  background: linear-gradient( 180deg, transparent 20px, hsla(344, 71%, 41%, 0.5) 20px), linear-gradient( 90deg, transparent 10px, hsla(342, 99%, 70%, 0.5) 10px, hsla(342, 99%, 40%, 0.5) 90px, transparent 90px);
+  background: linear-gradient(180deg, transparent 20px, rgba(179, 30, 70, 0.5) 20px), linear-gradient(90deg, transparent 10px, rgba(254, 103, 148, 0.5) 10px, rgba(203, 1, 62, 0.5) 90px, transparent 90px);
   background-size: 1px 21px, 100px 1px;
+}
+
+.is-valid {
+  color: #39b962;
+}
+
+.is-invalid {
+  color: #cd201f;
+}
+
+.demo {
+  padding-top: 126px;
+}
+
+.headline {
+  margin-top: 30px;
+  margin-left: -2px;
+}
+
+.content {
+  margin-top: 21px;
+}
+
+nav.gnb ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+footer.page-footer ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.sidebar .content::after {
+  content: '';
+  display: block;
+  clear: both;
 }

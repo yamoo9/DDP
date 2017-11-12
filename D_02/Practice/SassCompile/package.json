@@ -2,7 +2,7 @@
   "scripts": {
     "start": "npm run sass:watch",
     "sass": "node-sass --output-style expanded sass/ -o css/",
-    "sass:watch": "node-sass --output-style expanded sass/ -o css/ -w"
+    "sass:watch": "node-sass -wr -o css --source-map true --source-map-contents sass"
   },
   "devDependencies": {
     "node-sass": "^4.6.1"
