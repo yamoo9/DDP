@@ -9,7 +9,7 @@
         ├── typography.css
         └── utils.css
 */
-@import "modules/init.css";
-@import "modules/typography.css";
-@import "modules/grid-system.css";
-@import "modules/utils.css";
+@import "./modules/init.css";
+@import "./modules/typography.css";
+@import "./modules/grid-system.css";
+@import "./modules/utils.css";
