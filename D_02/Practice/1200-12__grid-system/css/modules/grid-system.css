@@ -1,0 +1,81 @@
+/**
+ * 그리드 시스템 설정 변수
+ * --------------------------
+ * page-width       : 1200px
+ * column-count     : 12
+ * gutter-direction : split
+ * gutter-width     : 20px (10px * 2)
+ * column-width     : 100px
+ */
+
+/* .container module */
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .row module */
+.row::after,
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* .col module */
+.col {
+  float: left;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* .is-* module */
+/* 공식: width = column-width * count + gutter-wdith * (count - 1) */
+/*
+  자바스크립트 함수
+  function width(count, col_width, gutter_width) {
+    col_width=col_width || 80;
+    gutter_width=gutter_width || 20;
+    return (col_width * count)+gutter_width * (count - 1);
+  }
+*/
+.col.is-1  { width: 100px;  }
+.col.is-2  { width: 180px;  }
+.col.is-3  { width: 280px;  }
+.col.is-4  { width: 380px;  }
+.col.is-5  { width: 480px;  }
+.col.is-6  { width: 580px;  }
+.col.is-7  { width: 680px;  }
+.col.is-8  { width: 780px;  }
+.col.is-9  { width: 880px;  }
+.col.is-10 { width: 980px;  }
+.col.is-11 { width: 1080px; }
+
+/* .show-grid module */
+/* CSS3 Gradient Technique: Column Grid */
+.show-grid { position: relative; }
+.show-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background: linear-gradient(
+    180deg,
+    transparent 20px,
+    hsla(344, 71%, 41%, 0.5) 20px
+  ),
+  linear-gradient(
+    90deg,
+    transparent 10px,
+    hsla(342, 99%, 70%, 0.5) 10px,
+    hsla(342, 99%, 40%, 0.5) 90px,
+    transparent 90px
+  );
+  background-size:
+    1px 21px,
+    100px 1px;
+}

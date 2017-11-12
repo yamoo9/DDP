@@ -4,9 +4,9 @@
 ├── css
     ├── main.css
     └── modules
-        ├── grid-system.css
         ├── init.css
         ├── typography.css
+        ├── grid-system.css
         └── utils.css
 */
 @import "./modules/init.css";
