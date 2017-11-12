@@ -53,6 +53,42 @@
 .col.is-10 { width: 980px;  }
 .col.is-11 { width: 1080px; }
 
+/* offset module
+   .is-offset-*
+   .is-o-*
+ */
+/*
+  자바스크립트 함수
+  function offset(count, col_width, gutter_width) {
+    col_width = col_width || 80;
+    gutter_width = gutter_width || 20;
+    return (col_width * count) + (gutter_width * count) + gutter_width/2;
+  }
+*/
+.col.is-o-1,
+.col.is-offset-1   { margin-left: 110px; }
+.col.is-o-2,
+.col.is-offset-2   { margin-left: 210px; }
+.col.is-o-3,
+.col.is-offset-3   { margin-left: 310px; }
+.col.is-o-4,
+.col.is-offset-4   { margin-left: 410px; }
+.col.is-o-5,
+.col.is-offset-5   { margin-left: 510px; }
+.col.is-o-6,
+.col.is-offset-6   { margin-left: 610px; }
+.col.is-o-7,
+.col.is-offset-7   { margin-left: 710px; }
+.col.is-o-8,
+.col.is-offset-8   { margin-left: 810px; }
+.col.is-o-9,
+.col.is-offset-9   { margin-left: 910px; }
+.col.is-o-10,
+.col.is-offset-10  { margin-left: 1010px; }
+.col.is-o-11,
+.col.is-offset-11  { margin-left: 1110px; }
+
+
 /* .show-grid module */
 /* CSS3 Gradient Technique: Column Grid */
 .show-grid { position: relative; }

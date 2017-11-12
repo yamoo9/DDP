@@ -13,3 +13,17 @@
 @import "./modules/typography.css";
 @import "./modules/grid-system.css";
 @import "./modules/utils.css";
+
+
+.container .row {
+  margin-bottom: 21px;
+}
+
+.container .col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  background: #000;
+  color: #ffffff;
+}
