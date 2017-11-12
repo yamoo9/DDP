@@ -1,0 +1,12 @@
+{
+  "name": "test-sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass sass/ -o css/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,192 @@
+// Sass 변수
+$page-width: 1200px;
+$column-count: 12;
+$gutter-direction: 'split'; $gutter-width: 20px;
+$column-width: 100px;
+
+// 상태 변수
+$is-center-position: true;
+
+/* .container module */
+
+.container {
+  width: $page-width;
+  @if $is-center-position == true {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* .row module */
+
+.row::after,
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+
+/* .col module */
+
+.col {
+  $half-gutter-width: $gutter-width / 2;
+  float: left;
+  width: 100%;
+  margin-left: $half-gutter-width;
+  margin-right: $half-gutter-width;
+}
+
+
+/* .is-* module */
+
+
+/* 공식: width = column-width * count + gutter-wdith * (count - 1) */
+
+
+/*
+  자바스크립트 함수
+  function width(count, col_width, gutter_width) {
+    col_width=col_width || 80;
+    gutter_width=gutter_width || 20;
+    return (col_width * count)+gutter_width * (count - 1);
+  }
+*/
+
+.col.is-1 {
+  width: 100px;
+}
+
+.col.is-2 {
+  width: 180px;
+}
+
+.col.is-3 {
+  width: 280px;
+}
+
+.col.is-4 {
+  width: 380px;
+}
+
+.col.is-5 {
+  width: 480px;
+}
+
+.col.is-6 {
+  width: 580px;
+}
+
+.col.is-7 {
+  width: 680px;
+}
+
+.col.is-8 {
+  width: 780px;
+}
+
+.col.is-9 {
+  width: 880px;
+}
+
+.col.is-10 {
+  width: 980px;
+}
+
+.col.is-11 {
+  width: 1080px;
+}
+
+
+/* offset module
+   .is-offset-*
+   .is-o-*
+ */
+
+
+/*
+  자바스크립트 함수
+  function offset(count, col_width, gutter_width) {
+    col_width = col_width || 80;
+    gutter_width = gutter_width || 20;
+    return (col_width * count) + (gutter_width * count) + gutter_width/2;
+  }
+*/
+
+.col.is-o-1,
+.col.is-offset-1 {
+  margin-left: 110px;
+}
+
+.col.is-o-2,
+.col.is-offset-2 {
+  margin-left: 210px;
+}
+
+.col.is-o-3,
+.col.is-offset-3 {
+  margin-left: 310px;
+}
+
+.col.is-o-4,
+.col.is-offset-4 {
+  margin-left: 410px;
+}
+
+.col.is-o-5,
+.col.is-offset-5 {
+  margin-left: 510px;
+}
+
+.col.is-o-6,
+.col.is-offset-6 {
+  margin-left: 610px;
+}
+
+.col.is-o-7,
+.col.is-offset-7 {
+  margin-left: 710px;
+}
+
+.col.is-o-8,
+.col.is-offset-8 {
+  margin-left: 810px;
+}
+
+.col.is-o-9,
+.col.is-offset-9 {
+  margin-left: 910px;
+}
+
+.col.is-o-10,
+.col.is-offset-10 {
+  margin-left: 1010px;
+}
+
+.col.is-o-11,
+.col.is-offset-11 {
+  margin-left: 1110px;
+}
+
+
+/* .show-grid module */
+
+
+/* CSS3 Gradient Technique: Column Grid */
+
+.show-grid {
+  position: relative;
+}
+
+.show-grid::before {
+  opacity: 0.4;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  background: linear-gradient( 180deg, transparent 20px, hsla(344, 71%, 41%, 0.5) 20px), linear-gradient( 90deg, transparent 10px, hsla(342, 99%, 70%, 0.5) 10px, hsla(342, 99%, 40%, 0.5) 90px, transparent 90px);
+  background-size: 1px 21px, 100px 1px;
+}

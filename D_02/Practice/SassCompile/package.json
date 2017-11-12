@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "npm run sass:watch",
+    "sass": "node-sass --output-style expanded sass/ -o css/",
+    "sass:watch": "node-sass --output-style expanded sass/ -o css/ -w"
+  },
+  "devDependencies": {
+    "node-sass": "^4.6.1"
+  }
+}
