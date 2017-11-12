@@ -1,16 +1,20 @@
 @charset "utf-8";
 
-/*
-├── css
-    ├── main.css
-    └── modules
-        ├── init.css
-        ├── typography.css
-        ├── grid-system.css
-        └── utils.css
+/* Modules
+    .
+    ├── css
+        ├── main.css
+        └── modules
+            ├── init.css
+            ├── typography.css
+            ├── grid-system.css
+            └── utils.css
 */
 @import "./modules/init.css";
 @import "./modules/typography.css";
 @import "./modules/grid-system.css";
 @import "./modules/utils.css";
-@import "./modules/page.css";
+
+
+/* Page Design */
+@import "./page.css";
