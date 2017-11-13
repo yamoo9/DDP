@@ -136,9 +136,11 @@ $ ssh -T git@github.com
 
 <img src="../_/github-register-success.jpg" alt="">
 
----
+<br>
+<br>
+<br>
 
-### 4. Git Push 권한 오류 문제 해결
+### 오류 해결
 
 GtHub에 푸시하는데 더 이상 권한 오류가 발생하지 않는다.
 
