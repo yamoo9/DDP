@@ -127,7 +127,7 @@ __successfully authenticated__ 메시지가 출력되면 등록에 성공한 것
 ```sh
 $ ssh -T git@github.com
 
-# Hi yamoo9/DDP! You've successfully authenticated, but GitHub does not provide shell access.
+# Hi yamoo9/XXXX! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
 <br>
@@ -144,4 +144,13 @@ GtHub에 푸시하는데 더 이상 권한 오류가 발생하지 않는다.
 
 ```sh
 $ git push origin master
+
+# Counting objects: 9, done.
+# Delta compression using up to 8 threads.
+# Compressing objects: 100% (9/9), done.
+# Writing objects: 100% (9/9), 447.67 KiB | 1.17 MiB/s, done.
+# Total 9 (delta 3), reused 0 (delta 0)
+# remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+# To github.com:yamoo9/XXXX.git
+#    XXXXXXX..XXXXXXX  master -> master
 ```
