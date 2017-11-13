@@ -2,6 +2,16 @@
 
 # Permission denied (publickey).
 
+- [증상](#증상)
+- [원인](#원인)
+- [해결책](#해결책)
+  - [1. ssh publickey가 없는 경우](#1-ssh-publickey가-없는-경우)
+  - [2. ssh publickey가 있는 경우](#2-ssh-publickey가-있는-경우)
+  - [3. GitHub 저장소에 ssh publickey 등록](#3-github-저장소에-ssh-publickey-등록)
+- [오류 해결](#오류-해결)
+
+<br>
+
 ### 증상
 
 로컬 저장소 변경 사항을 커밋한 후, GitHub 저장소에 푸시할 때 권한이 없다며 오류 발생.
@@ -136,8 +146,6 @@ $ ssh -T git@github.com
 
 <img src="../_/github-register-success.jpg" alt="">
 
-<br>
-<br>
 <br>
 
 ### 오류 해결
