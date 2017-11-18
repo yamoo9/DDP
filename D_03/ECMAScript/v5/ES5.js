@@ -129,7 +129,7 @@ console.groupEnd('typeof 검증');
 // 2-2) 데이터 타입 검증 방법 instanceof
 // 참고: https://goo.gl/3w3EEw
 
-console.group('instanceof 활용시 주의할 점');
+console.groupCollapsed('instanceof 활용시 주의할 점');
 
 // 객체를 생성할 수 있는 생성자 함수(Constructor)
 function RemoteController(){}
@@ -197,9 +197,36 @@ console.groupEnd('instanceof 활용시 주의할 점');
 // 2-3) 데이터 타입 검증 방법 .consturctor 속성
 // 참고: https://goo.gl/RqAF6f
 
+console.groupCollapsed('.constructor 속성의 장점과 한계');
+
+// JavaScript의 대부분은 모두 객체이다.
+// 객체가 아닌 것들: 원시형 데이터 유형
+
+// 모든 객체는 생성 과정에서 반드시 소유하고 있는 속성이 있다.
+// 그 속성은 .constructor 이다. (생성자: constructor)
+// 빌트인(내장), 커스텀(사용자정의) 생성자 모두 해당
+
+console.info('데이터가 객체라면 반드시 .constructor 속성을 가지고 있어 생성자 검증이 100% 가능하다. 단, 객체가 아니면 오류를 발신한다.');
+
+console.groupEnd('.constructor 속성의 장점과 한계');
+
 
 // 2-4) 데이터 타입 검증 방법 직접 만든 유틸리티 함수
+// 사용자가 필요에 의해 직접 제작하는 함수
+function _type(o){
+  // 해당 데이터가 어떤 유형의 데이터인지 문자열(소문자)로 반환
+  return Object.prototype.toString.call(o).toLowerCase().slice(8,-1);
+}
 
+var y9 = {
+  type: _type
+};
+
+window.$ = y9;
+
+y9.type(null); // 'null'
+y9.type([]);   // 'array'
+y9.type({});   // 'object'
 
 
 
