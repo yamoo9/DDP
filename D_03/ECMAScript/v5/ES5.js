@@ -43,6 +43,8 @@ var num = 10,
 // 동일해보이나, 실상 복사된 다른 값
 // 결국, 하나의 값을 변경했을 때 나머지 다른 값은 변화가 없다.
 
+console.groupCollapsed('값 복사 VS 값 참조');
+
 var number_k = num; // 값(숫자 10) 복사
 console.log('변경 전: number_k === num:', number_k === num);
 
@@ -71,11 +73,15 @@ arr.push('jQuery 완전 정복');
 console.log('변경 후: books === arr:', books === arr);
 
 
+console.groupEnd('값 복사 VS 값 참조');
+
+
 
 // 1-4) 자바스크립트 메모리 관리는 어떻게 하는가?
 // 참고: https://goo.gl/EWWHnZ
 
-
+// 가비지 컬렉터라는 로봇이 주어진 알고리즘을 사용하여,
+// 자동으로 더 이상 사용되지 않는 데이터를 메모리에서 비워준다.
 
 
 
@@ -88,10 +94,105 @@ console.log('변경 후: books === arr:', books === arr);
 // 2-1) 데이터 타입 검증 방법 typeof
 // 참고: https://goo.gl/6rpQQi
 
+console.groupCollapsed('typeof 검증');
+// 가장 큰 문제점: null, object, array를 구분할 수 없다.
+
+console.log('typeof num:', typeof num);
+console.log('typeof str:', typeof str);
+console.log('typeof boo:', typeof boo);
+console.log('typeof fun:', typeof fun);
+console.log('typeof arr:', typeof arr);
+console.log('typeof obj:', typeof obj);
+
+function setProps(o, props) {
+  if (typeof props === 'object') {
+    console.log('통과된 값:', props);
+    // for ( var prop in props ) {
+    //   o[prop] = props[prop];
+    // }
+  }
+  return o;
+}
+var new_o = setProps({}, null); // 조건 통과(PASS) = 문제됨!
+var new_o = setProps({}, []); // 조건 통과(PASS) = 문제됨!
+var new_o = setProps({}, { // 조건 통과(PASS) = 올바름!
+  a: 10,
+  b: function () {}
+});
+
+
+console.groupEnd('typeof 검증');
+
+
+
 
 // 2-2) 데이터 타입 검증 방법 instanceof
 // 참고: https://goo.gl/3w3EEw
 
+console.group('instanceof 활용시 주의할 점');
+
+// 객체를 생성할 수 있는 생성자 함수(Constructor)
+function RemoteController(){}
+
+// 생성자 함수를 통해 생성된 객체(Instance)
+var remote_a = new RemoteController();
+var remote_b = new RemoteController();
+var remote_c = new RemoteController();
+
+remote_a instanceof RemoteController; // true
+
+
+var o = new Object(); // 생성자 함수 Object를 사용해서 새로운(new) 객체 o를 생성한다.
+var is_object_instance = o instanceof Object;
+
+// typeof의 문제점을 해결할 수 있을까?
+// typeof는 배열 데이터를 객체라고 잘못 이야기 한다.
+// 그렇다면 instanceof는 해당 문제를 올바르게 이야기 할까?
+console.log('arr instanceof Array:', arr instanceof Array); // true
+
+// 단, 문제가 있는데 (참고로 문제라기보다는 사람들 인식과 결과가 다르게 동작한다)
+// 숫자 값, 문자 값, 불리언 값은 객체가 아니기에 instanceof로 검증하면 false를 반환한다.
+console.log('num instanceof Number:', num instanceof Number); // true??? -> false
+
+// JavaScript 상속 시스템을 거슬러 검증하기에 기대와 다른 결과를 도출할 수 있다.
+console.log('arr instanceof Array:', arr instanceof Array); // false??? -> true
+
+// 객체 지향 자바스크립트 프로그래밍
+// 컴포넌트 개발
+// 캐러셀
+function Carousel(el_node, options){
+  'use strict'; // 엄격한 문법 모드 발동
+
+  // 유형 검증(type check validation)
+  // this 검증
+
+  // if ( !(this instanceof Carousel) ) {
+
+  // 케이스 1) new 키워드를 강제화 하는 패턴
+  // 코드 종료 없이 오류 메시지를 콘솔에 출력
+  // console.error('new Carousel() 형식으로 사용하셔야 합니다.');
+  // 코드 종료와 함께 오류 메시지를 콘솔에 출력
+  //   throw new Error('new Carousel() 형식으로 사용하셔야 합니다.');
+
+  // 케이스 2) new를 생략해도 객체가 생성되는 패턴
+  //   return new Carousel(el_node, options);
+
+  // }
+
+  this.el = el_node;
+  this.config = options;
+}
+
+var caro_el = document.querySelector('.my-carousel');
+var my_caro = new Carousel( caro_el, {
+  animate: true,
+  infinite: false,
+  auto_slide: true
+} );
+
+console.log('my_caro instanceof Carousel:', my_caro instanceof Carousel);
+
+console.groupEnd('instanceof 활용시 주의할 점');
 
 // 2-3) 데이터 타입 검증 방법 .consturctor 속성
 // 참고: https://goo.gl/RqAF6f
