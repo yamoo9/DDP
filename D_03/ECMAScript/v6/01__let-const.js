@@ -24,6 +24,7 @@ console.log(a); // 'beta'
 // 2. let 키워드 도입 [ES6]
 // https://goo.gl/kBquFB
 
+// 2-1. 블록 스코프 (Block-level Scope)
 var b = 'alpha';
 {
   let b = 'beta';
@@ -31,9 +32,55 @@ var b = 'alpha';
 }
 console.log(b); // 'alpha'
 
-
-// 2-1. 블록 스코프 (Block-level Scope)
 // 2-2. let 호이스팅 현상 (var와 비교)
+
+var is_visible = true;
+console.log(is_visible); // true
+
+function scopeVar() {
+  // Hoist
+  if ( !is_visible ) {
+    var is_visible = 'visible';
+  } else {
+    var is_visible = 'invisible';
+  }
+  console.log(is_visible); // 'visible'
+}
+scopeVar();
+console.log(is_visible); // true
+
+// 호이스트된 결과 코드
+// function scopeVar() {
+//   // Hoist
+//   var is_visible; // undefined
+//   if (!is_visible) {
+//     is_visible = 'visible';
+//   } else {
+//     is_visible = 'invisible';
+//   }
+//   console.log(is_visible); // 'visible'
+// }
+// scopeVar();
+// console.log(is_visible); // true
+
+
+
+function scopeLet() {
+  console.log('------- let ------');
+  if (!is_visible) {
+    // Hoist
+    let is_visible = 'visible';
+  } else {
+    // Hoist
+    let is_visible = 'invisible';
+  }
+  console.log(is_visible); // true (상위 영역의 변수 출력)
+}
+scopeLet();
+console.log(is_visible); // true
+
+
+
 // 2-3. 클로저 VS 블록 스코프
 // 2-4. 전역 객체의 속성 (var, let 전역 변수의 특징)
 
