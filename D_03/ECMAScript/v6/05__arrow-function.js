@@ -21,6 +21,18 @@ var compare_fn_arrow = {
   }
 };
 
+new Vue({
+  el: '.mount',
+  data: {
+
+  },
+  methods: {
+    toggleVisible() {
+      console.log(this); // Vue {} X
+    },
+  }
+})
+
 
 // ES5 //
 var o = {

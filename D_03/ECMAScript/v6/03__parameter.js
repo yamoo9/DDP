@@ -5,7 +5,7 @@
 ///////////////////////
 
 // ES5 //
-Accordion = function (element, options, level) {
+var Accordion = function (element, options, level) {
   // level 전달인자 초기 값 설정
   this.options = (options && typeof options === 'object' && !options.length) ? options : {};
   // level 전달인자 초기 값 설정
@@ -18,6 +18,9 @@ Accordion = function (element, options, level) {
 // 기본 매개변수를 사용하면 값이 없거나 undefined가 전달될 경우,
 // 매개변수를 기본값으로 초기화 할 수 있다.
 // https://goo.gl/34EAkm
+var Accordion = (element, options={}, level=1) => {
+
+};
 
 
 
@@ -59,6 +62,16 @@ total(28, 35, 1, 7);
 // 나머지 매개변수(rest parameter) 구문은
 // 전달인자를 배열로 참조합니다.
 // https://goo.gl/MTHqGA
+function sum(name, ...args) {
+  // name = 'data name'
+  // args = [2, 3, 4, 6, 7]
+  console.log(args);
+  console.log(!!args.push); // true
+}
+
+var list = [2, 3, 4, 6, 7];
+
+sum('data name', ...list);
 
 // 배열 객체
 // 가장 마지막에 위치
@@ -116,6 +129,8 @@ var number_insertion = insertArray(integer, 2, float);
 // https://goo.gl/KUNsTt
 
 // 배열 복제
+var k= [1, 3, 4, 5];
+var o = [9, 7, ...k, 101];
 
 // 순차 결합 (concat, push 등)
 

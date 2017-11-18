@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "babel": "babel src/main.js > dist/main.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
