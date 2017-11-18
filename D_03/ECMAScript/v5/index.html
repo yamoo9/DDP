@@ -5,6 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>JavaScript ES5 알아두면 주요한 이야기들</title>
+  <script src="./modules/utils.js"></script>
+  <script src="./modules/dom.js"></script>
+  <script>
+    // 캡슐화(보호)
+    // 외부와 차단, 충돌을 방지
+    // 모듈을 생성
+    // IIFE 패턴
+    ;(function (){
+      var q = function(url){
+        var xhr = new XMLHttpRequest();
+        xhr.open(url, 'GET');
+        xhr.send();
+      };
+      console.log(q);
+    })();
+    (function(){
+      'use strict';
+
+    })()
+    (function(){
+      'use strict';
+
+    })();
+    console.log(q);
+  </script>
   <script src="./ES5.js"></script>
 </head>
 <body>

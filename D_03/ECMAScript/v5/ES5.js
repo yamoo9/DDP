@@ -266,6 +266,32 @@ y9.type({});   // 'object'
 
 
 // 4-1) 영역(Scope)
+// Global Scope
+var a = 'alpha';
+console.log('init:', a); // 'alpha'
+
+// Block Scope
+// {
+
+// Function Scope
+function localScope() {
+  // if support local scope
+  // Local Scope
+  var a = 'beta';
+  // console.log('in block:', a); // 'beta'
+  console.log('in Function:', a); // 'beta'
+}
+
+localScope();
+
+// console.log('out block:', a); // ??? 'beta'
+console.log('out Function:', a); // ??? 'beta'
+
+
+// 모듈(Module) 개념이 없다.
+// 단, HTML 문서에서 모듈처럼 개발된 낱개의 문서를 불러와 적용은 가능
+//
+
 
 // 4-1-1) 라이프 사이클(Life Cycle)
 

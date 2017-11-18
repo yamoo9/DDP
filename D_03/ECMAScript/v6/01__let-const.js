@@ -13,10 +13,24 @@
 // 1-3. 클로저 (Closure)
 // 1-3. IIFE (Immediately Invoked Function Expressions: “Iffy”라고 발음) 패턴
 
+var a = 'alpha';
+{
+  var a = 'beta';
+  console.log(a); // 'beta'
+}
+console.log(a); // 'beta'
 
 
 // 2. let 키워드 도입 [ES6]
 // https://goo.gl/kBquFB
+
+var b = 'alpha';
+{
+  let b = 'beta';
+  console.log(b); // 'beta'
+}
+console.log(b); // 'alpha'
+
 
 // 2-1. 블록 스코프 (Block-level Scope)
 // 2-2. let 호이스팅 현상 (var와 비교)
