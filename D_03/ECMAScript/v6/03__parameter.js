@@ -1,4 +1,4 @@
-/*! ES6__03_parameter.js @ 2017, yamoo9@naver.com */
+/*! parameter.js @ 2017, yamoo9@naver.com */
 
 ///////////////////////
 // Default Parameter //

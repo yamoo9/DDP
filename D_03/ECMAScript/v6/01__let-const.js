@@ -1,4 +1,4 @@
-/*! ES6__01_let-const.js @ 2017, yamoo9@naver.com */
+/*! let-const.js @ 2017, yamoo9@naver.com */
 
 ////////////////
 // let, const //

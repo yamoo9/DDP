@@ -1,4 +1,4 @@
-/*! ES6__02_string-template.js @ 2017, yamoo9@naver.com */
+/*! string-template.js @ 2017, yamoo9@naver.com */
 
 //////////////////////
 // String Additions //

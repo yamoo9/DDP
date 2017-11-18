@@ -1,4 +1,4 @@
-/*! ES6__04_array-additions.js @ 2017, yamoo9@naver.com */
+/*! array-additions.js @ 2017, yamoo9@naver.com */
 
 //////////////////////
 // Array Additions  //
