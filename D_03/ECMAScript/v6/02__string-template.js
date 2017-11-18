@@ -15,6 +15,7 @@ var delivery_table_info = {
 
 
 // 방법 0. 읽기 힘든 문자열
+// HTML Template
 var delivert_table_0 = '<table class="' + delivery_table_info.table_class + '"><caption class="a11y-hidden">' + delivery_table_info.caption + '</caption><tr><td></td><th scope="col">' + delivery_table_info.days[0] + '</th><th scope="col">' + delivery_table_info.days[1] + '</th><th scope = "col">' + delivery_table_info.days[2] + '</th><th scope="col">' + delivery_table_info.days[3] + '</th><th scope="col">' + delivery_table_info.days[4] + '</th></tr><tr><th scope="row">' + delivery_table_info.times[0] + '</th><td>Closed</td><td>Open</td><td>Open</td><td>Closed</td><td>Closed</td></tr><tr><th scope="row">' + delivery_table_info.times[1] + '</th><td>Open</td><td> Open</td><td>Closed</td><td>Closed</td><td>Closed</td></tr></table>';
 
 
@@ -116,6 +117,35 @@ var delivery_table_3 = '\
 // ES6 //
 // `` 백틱(Bactick) 문자
 // ${expression} 템플릿
+var table_template = `
+  <table class="y9-table delivery">
+  <caption class="a11y-hidden">${delivery_table_info.table_class}</caption>
+  <tr>
+    <td></td>
+    <th scope="col">${delivery_table_info.days[0]}</th>
+    <th scope="col">${delivery_table_info.days[1]}</th>
+    <th scope="col">${delivery_table_info.days[2]}</th>
+    <th scope="col">${delivery_table_info.days[3]}</th>
+    <th scope="col">${delivery_table_info.days[4]}</th>
+  </tr>
+  <tr>
+    <th scope="row">${delivery_table_info.times[0]}</th>
+    <td>Closed</td>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Closed</td>
+    <td>Closed</td>
+  </tr>
+  <tr>
+    <th scope="row">${delivery_table_info.times[1]}</th>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Closed</td>
+    <td>Closed</td>
+    <td>Closed</td>
+  </tr>
+</table>
+`;
 
 
 // ------------------------------------------

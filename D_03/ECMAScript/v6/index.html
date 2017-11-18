@@ -6,16 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ECMAScript 2015+</title>
   <style>
+  body {
+    margin: 50px;
+  }
   .demo,
   .demo * {
-    padding: 10px
+    margin: 0;
+    padding: 10px;
   }
-  .demo    { background: hsla(0, 0%, 91%, 0.25); }
+  .demo    { background: rgba(250, 244, 44, 0.25); }
   .demo ul { background: rgba(196, 149, 149, 0.25); list-style: none; }
   .demo li { background: rgba(103, 189, 170, 0.25); }
-  .demo a  { background: rgba(201, 35, 173, 0.25); display: block; margin: 10px; text-decoration: none;}
+  .demo a  { background: rgba(201, 35, 173, 0.25); display: block; text-decoration: none;}
   </style>
-  <script src="./01__let-const.js"></script>
 </head>
 <body>
 
@@ -28,19 +31,49 @@
       <li><a href="">item 05</a></li>
     </ul>
   </nav>
+
+  <script src="./01__let-const.js"></script>
+  <script src="./02__string-template.js"></script>
   <script>
     (function(document){
       'use strict';
       // .demo 요소를 참조해서 이벤트 바인딩(위임)
       let demo = document.querySelector('.demo');
       demo.addEventListener('click', displayElementIndex);
+
+      for ( let links = demo.querySelectorAll('a'), l = links.length, link; (link = links[--l]); ) {
+        link.addEventListener('click', function(e){
+          e.preventDefault();
+          console.log(this, l);
+        });
+      }
+
+      // for ( var links = demo.querySelectorAll('a'), l = links.length, link; (link = links[--l]); ) {
+      //   link.addEventListener('click', (function(index){
+      //     console.log(index);
+      //     return function(e){
+      //       e.preventDefault();
+      //       console.log(this, index);
+      //     };
+      //   }(l)));
+      // }
+
+      // Array.prototype.forEach.call(demo.querySelectorAll('a'), function(item, index){
+      //   console.log(item, index);
+      // });
       // 클릭한 요소의 인덱스를 콘솔에 출력 (브라우저 기본 동작 차단)
       function displayElementIndex(e){
         // 브라우저 기본 동작 차단
         e.preventDefault();
-        console.log('e.currentTarget:', e.currentTarget);
-        console.log('e.target:', e.target);
-        console.log('this:', this);
+        // console.log('e.currentTarget:', e.currentTarget);
+        // console.log('e.target:', e.target);
+        // console.log('this:', this);
+        let target = e.target;
+      }
+      function displayLinkIndex(e){
+        e.preventDefault();
+        // e.target === this === e.currentTarget;
+
       }
     }(window.document));
   </script>
