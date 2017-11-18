@@ -80,8 +80,9 @@ scopeLet();
 console.log(is_visible); // true
 
 
-
 // 2-3. 클로저 VS 블록 스코프
+// DOMScript 반복 구문 처리 시 주의할 점과 해결책에 대해
+
 // 2-4. 전역 객체의 속성 (var, let 전역 변수의 특징)
 
 

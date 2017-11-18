@@ -5,9 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ECMAScript 2015+</title>
+  <style>
+  .demo,
+  .demo * {
+    padding: 10px
+  }
+  .demo    { background: hsla(0, 0%, 91%, 0.25); }
+  .demo ul { background: rgba(196, 149, 149, 0.25); list-style: none; }
+  .demo li { background: rgba(103, 189, 170, 0.25); }
+  .demo a  { background: rgba(201, 35, 173, 0.25); display: block; margin: 10px; text-decoration: none;}
+  </style>
   <script src="./01__let-const.js"></script>
 </head>
 <body>
 
+  <nav class="demo">
+    <ul>
+      <li><a href="">item 01</a></li>
+      <li><a href="">item 02</a></li>
+      <li><a href="">item 03</a></li>
+      <li><a href="">item 04</a></li>
+      <li><a href="">item 05</a></li>
+    </ul>
+  </nav>
+  <script>
+    (function(document){
+      'use strict';
+      // .demo 요소를 참조해서 이벤트 바인딩(위임)
+      let demo = document.querySelector('.demo');
+      demo.addEventListener('click', displayElementIndex);
+      // 클릭한 요소의 인덱스를 콘솔에 출력 (브라우저 기본 동작 차단)
+      function displayElementIndex(e){
+        // 브라우저 기본 동작 차단
+        e.preventDefault();
+        console.log('e.currentTarget:', e.currentTarget);
+        console.log('e.target:', e.target);
+        console.log('this:', this);
+      }
+    }(window.document));
+  </script>
 </body>
 </html>
