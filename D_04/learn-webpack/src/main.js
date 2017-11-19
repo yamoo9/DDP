@@ -41,8 +41,11 @@
 // Webpack을 사용해 번들링(묶음) 수행
 
 // CSS 파일 로드
-import './css/main.css';
-import './css/header.css';
+// import './css/main.css';
+// import './css/header.css';
+
+// Sass 파일 로드
+import './sass/main.scss';
 
 // ES 표준 모듈 로드
 // 노드 개발 모듈: node_modules/

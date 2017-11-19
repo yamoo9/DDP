@@ -32,6 +32,7 @@ const config = {
   module: {
     // 규칙
     rules: [
+      // ————————————————————————————————————————————————————————
       // JS: babel-laoder
       {
         test: /\.js$/,
@@ -43,6 +44,7 @@ const config = {
           }
         }
       },
+      // ————————————————————————————————————————————————————————
       // CSS: style-loader!css-loader
       {
         test: /\.css$/,
@@ -67,9 +69,33 @@ const config = {
           }
         ]
       },
-
+      // ————————————————————————————————————————————————————————
+      // Sass: style-loader <- css-loader <- sass-loader
+      {
+        test: /\.s(c|a)ss$/,
+        use: [{
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
+      },
     ]
-  }
+  },
+  // 관찰
+  // watch: true,
+  // 소스맵
+  // sourcemap: 'cheap-source-map',
 };
 
 // 설정을 내보냄

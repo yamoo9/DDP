@@ -5,9 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>모던 JavaScript 프레임워크 Vue</title>
+  <style>
+  [v-cloak] { display: none; }
+  </style>
 </head>
 <body>
 
+  <div id="app" v-cloak>
+    <!-- HTML Template -->
+    <!-- Data Binding -->
+    <h1>{{message}}</h1>
+    <p>
+      <label for="book_name">책 이름</label>
+      <input
+        v-model="add_book.name"
+        type="text"
+        id="book_name"
+        placeholder="오늘도 밤에 꿈을 꿉니다.">
+    </p>
+    <p>
+      <label for="book_link">책 링크</label>
+      <input
+        v-model="add_book.link"
+        type="text"
+        id="book_link"
+        placeholder="https://link-address.com">
+    </p>
+    <button
+      @click="addBook()"
+      type="button">add a book</button>
+    <ul>
+      <li v-for="book in books">
+        <a :href="book.link">{{book.name}} book</a>
+      </li>
+    </ul>
+  </div>
 
+  <!-- CDN -->
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    // ES5
+    (function(global, Vue){
+      'use strict';
+
+      // Vue f 생성자 함수
+      // Vue {} 객체 생성 -> 컴포넌트 (루트 -> 종속된 컴포넌트들)
+      global.vm = new Vue({
+        // DOM 마운트 요소의 선택자
+        el: '#app',
+        // 컴포넌트 데이터(state) 관리
+        // JavaScript 객체
+        data: {
+          message: 'Hello Vue',
+          add_book: {},
+          books: [
+            {
+              name: 'Vue.js',
+              link: 'https://books.naver.com/?q=vuejs'
+            },
+            {
+              name: 'React',
+              link: 'https://books.naver.com/?q=react'
+            },
+            {
+              name: 'Angular',
+              link: 'https://books.naver.com/?q=angular'
+            },
+          ]
+        },
+        // 컴포넌트 메서드 등록
+        methods: {
+          addBook: function(){
+            var new_content = this.add_book;
+            this.books.unshift( new_content );
+            this.add_book.name = '';
+            this.add_book.link = '';
+          },
+          removeBook(){},
+          replaceBook(){}
+        }
+      });
+
+    })(window, window.Vue);
+  </script>
 </body>
 </html>
