@@ -1,29 +1,71 @@
 'use strict';
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+// Babel 을 사용하면
+// 좋은 코딩 습관을 가질 수 있도록 훈련할 수 있다.
+// 초반에는 생소한, 문법적 오류를 접하게 되면서 다소 짜증이 날 수 있지만.
+// 굿 코딩 패턴 학습으로서 매우 좋다.
+
 // ---------------------------------------------------------------------------------------
 // let, const
+// var의 부족한 부분을 보완.
+// 호이스트, 중복 선언, 읽기전용을 변경할 수 없다.
+// 블록 스코프를 지원할 수 있다.
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-let-const
 (function (global) {
 
   var document = global.document;
-  var body = document.body;
+  var body = document.querySelector('body');
   var container = document.createElement('div');
 
   container.setAttribute('class', 'container');
   body.insertAdjacentElement('afterbegin', container); // <body> 바로 아래 위치에 요소가 추가
+
+  // body = '문서의 본문 객체';
+
+  var scope = '영역';
+
+  // let scope = 'Lexical Syntax';
 })(window);
 
 // ---------------------------------------------------------------------------------------
-// template string ``
-// interpolation ${}
+// template string `` <- HTML 코드 '', ""
+// interpolation ${}, Vue {{}}
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-template-strings
 
+var day = '일요일 아침';
+var message = '\uC624\uB298\uB3C4 \'\uB9E4\uC6B0\' "\uC88B\uC740" ' + day + '\uC785\uB2C8\uB2E4. :-)';
 
 // ---------------------------------------------------------------------------------------
 // parameter [default, rest]
-// spread operator
+// spread operator ...
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-default-rest-spread
 
+var frameworks = 'vue.js react angular ember backbone'.split(' '); // string => array
+
+// let copy_frameworks = frameworks.slice();
+var copy_frameworks = [].concat(_toConsumableArray(frameworks));
+
+var libraries_and_frameworks = ['jquery', 'lodash'].concat(_toConsumableArray(frameworks), ['scrollmagic']);
+
+function displayOrder() {
+  for (var _len = arguments.length, js_lib_frameworks = Array(_len), _key = 0; _key < _len; _key++) {
+    js_lib_frameworks[_key] = arguments[_key];
+  }
+
+  console.log(arguments); // 유사 배열: like array object
+  [].concat(Array.prototype.slice.call(arguments)).forEach(function (item) {
+    return console.log(item);
+  });
+
+  console.log(js_lib_frameworks); // array
+  js_lib_frameworks.forEach(function (item, index) {
+    return console.log(item, index);
+  });
+}
+
+displayOrder.apply(undefined, _toConsumableArray(libraries_and_frameworks));
 
 // ---------------------------------------------------------------------------------------
 // arrow function

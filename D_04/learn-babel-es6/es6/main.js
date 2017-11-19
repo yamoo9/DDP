@@ -1,31 +1,62 @@
+// Babel 을 사용하면
+// 좋은 코딩 습관을 가질 수 있도록 훈련할 수 있다.
+// 초반에는 생소한, 문법적 오류를 접하게 되면서 다소 짜증이 날 수 있지만.
+// 굿 코딩 패턴 학습으로서 매우 좋다.
+
 // ---------------------------------------------------------------------------------------
 // let, const
+// var의 부족한 부분을 보완.
+// 호이스트, 중복 선언, 읽기전용을 변경할 수 없다.
+// 블록 스코프를 지원할 수 있다.
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-let-const
 (global => {
 
-  let document  = global.document;
-  let body      = document.body;
-  let container = document.createElement('div');
+  const document  = global.document;
+  const body      = document.querySelector('body');
+  const container = document.createElement('div');
 
   container.setAttribute('class', 'container');
   body.insertAdjacentElement( 'afterbegin', container ); // <body> 바로 아래 위치에 요소가 추가
+
+  // body = '문서의 본문 객체';
+
+  let scope = '영역';
+
+  // let scope = 'Lexical Syntax';
 
 })(window);
 
 
 // ---------------------------------------------------------------------------------------
-// template string ``
-// interpolation ${}
+// template string `` <- HTML 코드 '', ""
+// interpolation ${}, Vue {{}}
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-template-strings
 
+let day = '일요일 아침';
+let message = `오늘도 '매우' "좋은" ${day}입니다. :-)`;
 
 
 // ---------------------------------------------------------------------------------------
 // parameter [default, rest]
-// spread operator
+// spread operator ...
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-default-rest-spread
 
+let frameworks = 'vue.js react angular ember backbone'.split(' '); // string => array
 
+// let copy_frameworks = frameworks.slice();
+let copy_frameworks = [...frameworks];
+
+let libraries_and_frameworks = ['jquery', 'lodash', ...frameworks, 'scrollmagic'];
+
+function displayOrder(...js_lib_frameworks) {
+  console.log(arguments); // 유사 배열: like array object
+  [...arguments].forEach(item => console.log(item));
+
+  console.log(js_lib_frameworks); // array
+  js_lib_frameworks.forEach((item, index) => console.log(item, index));
+}
+
+displayOrder(...libraries_and_frameworks);
 
 // ---------------------------------------------------------------------------------------
 // arrow function

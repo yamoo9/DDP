@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "babel": "babel es6/main.js -o js/main.js"
+    "babel": "babel es6/main.js -o js/main.js",
+    "babel:watch": "babel es6/main.js -wo js/main.js",
+    "babel:w": "npm run babel -- -w"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
