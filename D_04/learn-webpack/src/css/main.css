@@ -1,0 +1,12 @@
+body {
+  margin: 30px;
+}
+
+h1 {
+  font-size: 100px;
+  font-weight: 200;
+  font-family: "Spoqa Han Sans";
+  letter-spacing: -0.03em;
+  color: hsl(255, 82%, 51%);
+  text-align: center;
+}

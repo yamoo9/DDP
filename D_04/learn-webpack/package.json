@@ -3,12 +3,25 @@
   "version": "0.0.1",
   "description": "webpack 학습",
   "scripts": {
-    "bundle": "webpack src/main.js dist/main.js",
-    "bundle:w": "npm run bundle -- -w",
-    "bundle:map": "npm run bundle:w -- -d",
+    "dev": "webpack",
+    "bundle:simple": "webpack src/main.js dist/main.js",
+    "bundle:simple-w": "npm run bundle -- -w",
+    "bundle:simple-map": "npm run bundle:w -- -d",
+    "bundle:babel-wd": "webpack src/main.js dist/main.js -wd --module-bind 'js=babel-loader'",
+    "bundle": "webpack src/main.js dist/main.js --module-bind 'css=style-loader!css-loader' --module-bind 'js=babel-loader' -wd",
     "build": "webpack src/main.js dist/build.min.js -p"
   },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.19.0",
     "webpack": "^3.8.1"
   },
   "dependencies": {

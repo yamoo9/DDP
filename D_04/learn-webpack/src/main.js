@@ -1,3 +1,4 @@
+// ——————————————————————————————————————————————————————
 // Front-End 개발 환경
 (function(global, _, $){
   'use strict';
@@ -35,8 +36,13 @@
 })(window, window._, window.jQuery);
 
 
+// ——————————————————————————————————————————————————————
 // Back-End 개발 환경 방식을 사용하여 Front-End에 적용
 // Webpack을 사용해 번들링(묶음) 수행
+
+// CSS 파일 로드
+import './css/main.css';
+import './css/header.css';
 
 // ES 표준 모듈 로드
 // 노드 개발 모듈: node_modules/
