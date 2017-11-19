@@ -9,5 +9,31 @@
 <body>
 
 
+  <!-- Modules -->
+  <script src="./js/modules/dom/query.js"></script>
+  <script src="./js/modules/utils/type.js"></script>
+  <script src="./js/modules/utils/array.js"></script>
+  <!-- Main -->
+  <script src="./js/main.js"></script>
+  <script>
+  (function(global){
+    'use strict';
+
+    var body = query('body');
+    var all  = queryAll('*');
+
+    var all_list = makeArray(all);
+
+    console.log( 'isArray(all_list):', isArray(all_list) );
+
+    function addClass(el, name) {
+      // validation
+      if ( type(el).indexOf('html') > -1 ) {}
+      if ( !isString(name) ) {}
+      el.classList.add(name);
+    }
+
+  })(window);
+  </script>
 </body>
 </html>

@@ -63,13 +63,51 @@ displayOrder(...libraries_and_frameworks);
 // this context
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-arrows-and-lexical-this
 
+// 매개변수가 없을 경우 () 생략할 수 없다.
+let arrowFn = () => {
+  return `Arrow Function`;
+};
 
+// return 구문이 없을 경우
+let hook = content => {
+  console.log(`hook ${content}`);
+};
+
+
+// return 구문이 간소할 경우 {} 및 return 키워드 생략 가능
+let arrowsFnc = (target) => `Arrow Function ${target}.`;
+// 매개변수가 1개인 경우는 () 생략 가능
+let arrowsFun = t => `Arrow Function ${t}.`;
+
+// 매개변수가 2개인 경우는 () 생략할 수 없다.
+let arrowsFc = (target, content) => `Arrow ${content} Functions ${target}.`;
 
 // ---------------------------------------------------------------------------------------
 // Enhanced Object Literals
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-enhanced-object-literals
 
+let name = 'parent';
 
+let parent = {
+  // ES5
+  name: name,
+  // ES6
+  // key: value 값이 동일한 경우
+  name,
+
+  // ES5
+  showName: function(){},
+  // ES6
+  showNames: () => {},
+  // 객체의 메서드인 경우
+  getName(){}
+};
+
+let o = {
+  // 객체 상속
+  // 프로토타입 체인
+  '__proto__': parent
+}
 
 // ---------------------------------------------------------------------------------------
 // Modules

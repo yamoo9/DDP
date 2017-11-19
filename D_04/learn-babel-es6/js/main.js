@@ -1,5 +1,9 @@
 'use strict';
 
+var _parent;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 // Babel 을 사용하면
@@ -72,33 +76,67 @@ displayOrder.apply(undefined, _toConsumableArray(libraries_and_frameworks));
 // this context
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-arrows-and-lexical-this
 
+// 매개변수가 없을 경우 () 생략할 수 없다.
+var arrowFn = function arrowFn() {
+  return 'Arrow Function';
+};
+
+// return 구문이 없을 경우
+var hook = function hook(content) {
+  console.log('hook ' + content);
+};
+
+// return 구문이 간소할 경우 {} 및 return 키워드 생략 가능
+var arrowsFnc = function arrowsFnc(target) {
+  return 'Arrow Function ' + target + '.';
+};
+// 매개변수가 1개인 경우는 () 생략 가능
+var arrowsFun = function arrowsFun(t) {
+  return 'Arrow Function ' + t + '.';
+};
+
+// 매개변수가 2개인 경우는 () 생략할 수 없다.
+var arrowsFc = function arrowsFc(target, content) {
+  return 'Arrow ' + content + ' Functions ' + target + '.';
+};
 
 // ---------------------------------------------------------------------------------------
 // Enhanced Object Literals
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-enhanced-object-literals
 
+var name = 'parent';
 
-// ---------------------------------------------------------------------------------------
-// Modules
-// https://babeljs.io/learn-es2015/#ecmascript-2015-features-modules
+var parent = (_parent = {
+  // ES5
+  name: name
+}, _defineProperty(_parent, 'name', name), _defineProperty(_parent, 'showName', function showName() {}), _defineProperty(_parent, 'showNames', function showNames() {}), _defineProperty(_parent, 'getName', function getName() {}), _parent);
+
+var o = {
+  // 객체 상속
+  // 프로토타입 체인
+  '__proto__': parent
+
+  // ---------------------------------------------------------------------------------------
+  // Modules
+  // https://babeljs.io/learn-es2015/#ecmascript-2015-features-modules
 
 
-// ---------------------------------------------------------------------------------------
-// Classes
-// https://babeljs.io/learn-es2015/#ecmascript-2015-features-classes
+  // ---------------------------------------------------------------------------------------
+  // Classes
+  // https://babeljs.io/learn-es2015/#ecmascript-2015-features-classes
 
 
-// ---------------------------------------------------------------------------------------
-// Set
-// Map
-// WeekSet
-// WeakMap
-// https://babeljs.io/learn-es2015/#ecmascript-2015-features-map-set-weak-map-weak-set
+  // ---------------------------------------------------------------------------------------
+  // Set
+  // Map
+  // WeekSet
+  // WeakMap
+  // https://babeljs.io/learn-es2015/#ecmascript-2015-features-map-set-weak-map-weak-set
 
-// Sets
-// 유일한 값을 가진 데이터 리스트.
-// array와 달리, 중복되는 데이터를 허용하지 않는다.
-var s = new Set();
+  // Sets
+  // 유일한 값을 가진 데이터 리스트.
+  // array와 달리, 중복되는 데이터를 허용하지 않는다.
+};var s = new Set();
 s.add("hello").add("goodbye").add("hello");
 s.size === 2;
 s.has("hello") === true;

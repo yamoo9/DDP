@@ -1,9 +1,3 @@
-// CommonJS 진영 문법
-// module.exports = 내보낼 모듈 객체, 함수, 배열
-
-// ES6 표준
-// export 변수, 함수, 객체, 배열, 클래스
-
 let toString = Object.prototype.toString;
 
 function type(data) {
@@ -37,9 +31,3 @@ function isObject(data) {
 function isEmptyObject(data) {
   return isObject(data) && (Object.entries(data).length === 0);
 }
-
-
-// 모듈(파일) 외부로 배포
-module.exports = {
-  type, isString, isNumber, isBoolean, isArray, isObject, isEmptyObject
-};
