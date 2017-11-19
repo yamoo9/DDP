@@ -1,23 +1,22 @@
+'use strict';
+
 // ---------------------------------------------------------------------------------------
 // let, const
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-let-const
-(global => {
+(function (global) {
 
-  let document  = global.document;
-  let body      = document.body;
-  let container = document.createElement('div');
+  var document = global.document;
+  var body = document.body;
+  var container = document.createElement('div');
 
   container.setAttribute('class', 'container');
-  body.insertAdjacentElement( 'afterbegin', container ); // <body> 바로 아래 위치에 요소가 추가
-
+  body.insertAdjacentElement('afterbegin', container); // <body> 바로 아래 위치에 요소가 추가
 })(window);
-
 
 // ---------------------------------------------------------------------------------------
 // template string ``
 // interpolation ${}
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-template-strings
-
 
 
 // ---------------------------------------------------------------------------------------
@@ -26,12 +25,10 @@
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-default-rest-spread
 
 
-
 // ---------------------------------------------------------------------------------------
 // arrow function
 // this context
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-arrows-and-lexical-this
-
 
 
 // ---------------------------------------------------------------------------------------
@@ -39,17 +36,14 @@
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-enhanced-object-literals
 
 
-
 // ---------------------------------------------------------------------------------------
 // Modules
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-modules
 
 
-
 // ---------------------------------------------------------------------------------------
 // Classes
 // https://babeljs.io/learn-es2015/#ecmascript-2015-features-classes
-
 
 
 // ---------------------------------------------------------------------------------------
@@ -79,7 +73,7 @@ var wm = new WeakMap();
 wm.set(s, {
   extra: 42
 });
-wm.size === undefined
+wm.size === undefined;
 
 // Weak Sets
 var ws = new WeakSet();
@@ -90,35 +84,35 @@ ws.add({
 
 
 // new Set()
-  // .size
-  // .add()
-  // .has()
-  // .delete()
-  // .clear()
-  // .forEach()
-  // .entries()
-  // .keys()
-  // .values()
+// .size
+// .add()
+// .has()
+// .delete()
+// .clear()
+// .forEach()
+// .entries()
+// .keys()
+// .values()
 
 // new Map()
-  // .size
-  // .set()
-  // .get()
-  // .has()
-  // .delete()
-  // .clear()
-  // .forEach()
-  // .entries()
-  // .keys()
-  // .values()
+// .size
+// .set()
+// .get()
+// .has()
+// .delete()
+// .clear()
+// .forEach()
+// .entries()
+// .keys()
+// .values()
 
 // new WeakSet()
-  // .add()
-  // .has()
-  // .delete()
+// .add()
+// .has()
+// .delete()
 
 // new WeakMap()
-  // .set()
-  // .get()
-  // .has()
-  // .delete()
+// .set()
+// .get()
+// .has()
+// .delete()
