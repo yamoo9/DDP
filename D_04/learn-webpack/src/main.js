@@ -1,3 +1,4 @@
+// Front-End 개발 환경
 (function(global, _, $){
   'use strict';
 
@@ -13,7 +14,7 @@
     // return elementNode
     return el;
   }
-  body.appendChild( component() );
+  // body.appendChild( component() );
 
   /**
    * jQuery 버전
@@ -32,3 +33,18 @@
   // $(body).append(component_jquery());
 
 })(window, window._, window.jQuery);
+
+
+// Back-End 개발 환경 방식을 사용하여 Front-End에 적용
+// Webpack을 사용해 번들링(묶음) 수행
+
+// ES 표준 모듈 로드
+import _ from 'lodash';
+import $ from 'jquery';
+
+let messages = ['Hello', 'VueJS', 'using', 'Webpack', ':)'];
+let $heading = $('<h1>')
+                .addClass('webpack-heading')
+                .text( _.join(messages, '') )
+                .appendTo('body');
+
