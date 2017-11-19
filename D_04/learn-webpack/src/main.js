@@ -39,12 +39,17 @@
 // Webpack을 사용해 번들링(묶음) 수행
 
 // ES 표준 모듈 로드
+// 노드 개발 모듈: node_modules/
 import _ from 'lodash';
 import $ from 'jquery';
 
+// 사용자 개발 모듈: user modules
+import './plugins/jquery.radioClass';
+
+// jQuery + Lodash 라이브러리를 활용한 스크립팅
 let messages = ['Hello', 'VueJS', 'using', 'Webpack', ':)'];
 let $heading = $('<h1>')
-                .addClass('webpack-heading')
-                .text( _.join(messages, '') )
+                .radioClass('webpack-heading')
+                .text( _.join(messages, ' ') )
                 .appendTo('body');
 

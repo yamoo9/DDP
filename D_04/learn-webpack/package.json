@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "webpack 학습",
   "scripts": {
-    "webpack": ""
+    "bundle": "webpack src/main.js dist/main.js",
+    "bundle:w": "npm run bundle -- -w",
+    "bundle:map": "npm run bundle:w -- -d",
+    "build": "webpack src/main.js dist/build.min.js -p"
   },
   "devDependencies": {
     "webpack": "^3.8.1"
